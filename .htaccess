@@ -1,0 +1,20 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+
+RewriteRule ^([a-zA-Z]+)/([a-zA-Z_-]+)\.php$ category.php?cat=$2 [L,QSA]
+RewriteRule ^([0-9]+)/(.*)/(.*)?$ sub-cat.php?date=$1cate=$2&sub=$3 [L,QSA]
+ 
+RewriteRule ^courses/([a-zA-Z0-9_-]+)/\.php$ course-details.php?id=$1 [L,QSA]
+
+#ErrorDocument 404 /esse/404.php
+
+# RewriteCond %{HTTP_HOST} ccitraders\.com [NC]
+# RewriteCond %{SERVER_PORT} 80
+# RewriteRule ^(.*)$ https://www.ccitraders.com/$1 [R,L]

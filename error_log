@@ -1,0 +1,3 @@
+[17-Aug-2022 12:15:20 America/New_York] PHP Notice:  Undefined index: amount in /home/ccitrade/public_html/verify_transaction.php on line 9
+[17-Aug-2022 12:15:21 America/New_York] PHP Notice:  Undefined variable: title in /home/ccitrade/public_html/mailApi.php on line 3
+[24-Aug-2022 04:53:52 America/New_York] PHP Notice:  Undefined index: amount in /home/ccitrade/public_html/verify_transaction.php on line 9

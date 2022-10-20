@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#assign-driver
+
+RewriteRule ^assign/([a-zA-Z0-9_-]+)/\.php$ assign-driver.php?booking=$1 [L,QSA]
+RewriteRule ^chat/([a-zA-Z0-9_-]+)/\.php$ chat.php?booking=$1 [L,QSA]
+RewriteRule ^upload/([a-zA-Z0-9_-]+)/\.php$ book-upload.php?booking=$1 [L,QSA]
+RewriteRule ^image/([a-zA-Z0-9_-]+)/\.php$ book-image.php?booking=$1 [L,QSA]
+RewriteRule ^track/([a-zA-Z0-9_-]+)/\.php$ tracker.php?booking=$1 [L,QSA]
+RewriteRule ^detail/([a-zA-Z0-9_-]+)/\.php$ deposit-detail.php?trans=$1 [L,QSA]
+#RewriteRule ^email/([a-zA-Z0-9_-]+)/([0-9]+)/\.php$ tokencheck.php?email=$1&token=$2 [L,QSA]
+RewriteRule ^category/([0-9]+)/([a-zA-Z0-9_-]+)/\.php$ vehicle.php?id=$1&name=$2 [L,QSA]
+RewriteRule ^book/([0-9]+)/([a-zA-Z]+)/\.php$ book.php?id=$1&status=$2 [L,QSA]
+RewriteRule ^booknow/([0-9]+)/([a-zA-Z]+)/([0-9a-zA-Z]+)/\.php$ booknow.php?id=$1&status=$2&book=$3 [L,QSA]
+RewriteRule ^ride/([0-9]+)/([a-zA-Z0-9_-]+)/([0-9_-]+)/([a-zA-Z]+)/\.php$ book-ride.php?id=$1&name=$2&img=$3&status=$4 [L,QSA]
+
+
