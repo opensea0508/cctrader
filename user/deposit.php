@@ -127,7 +127,7 @@ $ref = bin2hex(random_bytes(11));
                         <li class="list-group-item"> Access to Monitor Room</li>
                       </ul>
                       <div class="text-center mt-2">
-                        <a href="depo?id=1" class="btn btn-primary w-100">Make A Deposit</a>
+                        <a href="depo?id=3" class="btn btn-primary w-100">Make A Deposit</a>
                       </div>
                     </div>
                   </div>
@@ -153,7 +153,7 @@ $ref = bin2hex(random_bytes(11));
                         <li class="list-group-item"> <br/></li>
                       </ul>
                       <div class="text-center mt-2">
-                        <a href="depo?id=2" class="btn btn-primary w-100">Make A Deposit</a>
+                        <a href="depo?id=4" class="btn btn-primary w-100">Make A Deposit</a>
                       </div>
                     </div>
                   </div>
@@ -181,7 +181,7 @@ $ref = bin2hex(random_bytes(11));
                         <li class="list-group-item"> Access to Monitor Room</li>
                       </ul>
                       <div class="text-center mt-2">
-                        <a href="depo?id=1" class="btn btn-primary w-100">Make A Deposit</a>
+                        <a href="depo?id=5" class="btn btn-primary w-100">Make A Deposit</a>
                       </div>
                     </div>
                   </div>
@@ -199,7 +199,7 @@ $ref = bin2hex(random_bytes(11));
                         <li class="list-group-item"> Commission 5%</li>
                       </ul>
                       <div class="text-center mt-2">
-                        <a href="depo?id=2" class="btn btn-primary w-100">Make A Deposit</a>
+                        <a href="depo?id=6" class="btn btn-primary w-100">Make A Deposit</a>
                       </div>
                     </div>
                   </div>

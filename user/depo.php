@@ -42,7 +42,7 @@ $ref = bin2hex(random_bytes(11));
                   <?php
 
                   $id = $_GET['id'];
-                  $cat =  $id == 1 ? "Category 1" : "Category 2";
+                  $cat = "Category " . $id;
                   $_SESSION['category'] = $cat;
 
                   ?>
@@ -53,24 +53,82 @@ $ref = bin2hex(random_bytes(11));
                     <?php if ($id == 1) {
                       $min = 250
                     ?>
-                      <li class="list-group-item">Minimum Requirement $250</li>
+                      <li class="list-group-item"> Minimum Requirement $250</li>
+                      <li class="list-group-item"> Top up anytime</li>
                       <li class="list-group-item"> Maximum Leverage 1.50</li>
                       <li class="list-group-item"> Instrument: - Few asset Class</li>
-                      <li class="list-group-item"> Stop-out Protection 50%</li>
+                      <li class="list-group-item"> Stop-out Protection 70% - 50%</li>
                       <li class="list-group-item"> Performance Fees 30%.</li>
                       <li class="list-group-item"> Management fees 5%</li>
+                      <li class="list-group-item"> Minimum Duration 1Yr</li>
+                      <li class="list-group-item"> Profit withdrawable anytime</li>
                       <li class="list-group-item"> Access to trading histories</li>
                       <li class="list-group-item"> Access to Monitor Room</li>
-                    <?php } else {
+                    <?php } else if ($id == 2) {
                       $min = 5000 ?>
-                      <li class="list-group-item"> Minimum Requirement $5,000</li>
-                      <li class="list-group-item"> Maximum Leverage 1.30</li>
-                      <li class="list-group-item"> Instrument: - All assets class</li>
-                      <li class="list-group-item"> Stop-out Protection 50%</li>
-                      <li class="list-group-item"> Performance Fees 20%.</li>
-                      <li class="list-group-item"> No management fees</li>
-                      <li class="list-group-item"> Access to trading histories</li>
-                      <li class="list-group-item"> Access to Monitor Room</li>
+                        <li class="list-group-item"> Minimum Requirement $5,000</li>
+                        <li class="list-group-item"> Suitable for B2I Client</li>
+                        <li class="list-group-item"> Top up anytime</li>
+                        <li class="list-group-item"> Maximum Leverage 1.50</li>
+                        <li class="list-group-item"> Instrument: - Major assets class</li>
+                        <li class="list-group-item"> Stop-out Protection 70% - 50%</li>
+                        <li class="list-group-item"> Performance Fees 30%.</li>
+                        <li class="list-group-item"> Management fees 5%</li>
+                        <li class="list-group-item"> Minimum Duration 1Yr</li>
+                        <li class="list-group-item"> Profit withdrawable anytime</li>
+                        <li class="list-group-item"> Access to trading histories</li>
+                        <li class="list-group-item"> Access to Monitor Room</li>
+                    <?php } else if ($id == 3) {
+                      $min = 20000 ?>
+                        <li class="list-group-item"> Minimum Requirement $20,000</li>
+                        <li class="list-group-item"> Suitable for B2B & B2I</li>
+                        <li class="list-group-item"> Top up anytime</li>
+                        <li class="list-group-item"> Maximum Leverage 1.30</li>
+                        <li class="list-group-item"> Instrument: - All assets Class</li>
+                        <li class="list-group-item"> Stop-out Protection 70% - 50%</li>
+                        <li class="list-group-item"> Performance Fees 30%.</li>
+                        <li class="list-group-item"> Management fees 5%</li>
+                        <li class="list-group-item"> One Personal account Manager</li>
+                        <li class="list-group-item"> Minimum Duration 1Yr</li>
+                        <li class="list-group-item"> Profit withdrawable anytime</li>
+                        <li class="list-group-item"> Access to trading histories</li>
+                        <li class="list-group-item"> Access to Monitor Room</li>
+                    <?php } else if ($id == 4) {
+                      $min = 100000 ?>
+                        <li class="list-group-item"> Minimum Requirement $100,000</li>
+                        <li class="list-group-item"> Suitable for B2B & B2I</li>
+                        <li class="list-group-item"> Maximum Leverage 1.30</li>
+                        <li class="list-group-item"> Instrument: - All assets class</li>
+                        <li class="list-group-item"> Stop-out Protection 70% - 50%</li>
+                        <li class="list-group-item"> Performance Fees 25%.</li>
+                        <li class="list-group-item"> No management fees</li>
+                        <li class="list-group-item"> 3 Personal account Managers</li>
+                        <li class="list-group-item"> Minimum Duration 1Yr</li>
+                        <li class="list-group-item"> Profit withdrawable anytime</li>
+                        <li class="list-group-item"> Access to trading histories</li>
+                        <li class="list-group-item"> Access to Monitor Room</li>
+                    <?php } else if ($id == 5) {
+                      $min = 100000 ?>
+                        <li class="list-group-item"> Minimum Requirement $100,000</li>
+                        <li class="list-group-item"> Suitable for B2B</li>
+                        <li class="list-group-item"> Top up anytime</li>
+                        <li class="list-group-item"> Maximum Leverage 1.50</li>
+                        <li class="list-group-item"> Instrument: - All assets Class</li>
+                        <li class="list-group-item"> Stop-out Protection 70% - 50%</li>
+                        <li class="list-group-item"> Performance Fees 20%.</li>
+                        <li class="list-group-item"> No Management fees</li>
+                        <li class="list-group-item"> 5 Personal account Managers</li>
+                        <li class="list-group-item"> Minimum Duration 1Yr</li>
+                        <li class="list-group-item"> Profit withdrawable anytime</li>
+                        <li class="list-group-item"> Access to trading histories</li>
+                        <li class="list-group-item"> Access to Monitor Room</li>
+                    <?php } else if ($id == 6) {
+                      $min = 1 ?>
+                        <li class="list-group-item"> Minimum Purchase 1 Gram</li>
+                        <li class="list-group-item"> 99.9% Purity </li>
+                        <li class="list-group-item"> Minimum amount $100</li>
+                        <li class="list-group-item"> Minimum Deliverable 50 Gram</li>
+                        <li class="list-group-item"> Commission 5%</li>
                     <?php } ?>
                   </ul>
                   <hr>
@@ -90,9 +148,7 @@ $ref = bin2hex(random_bytes(11));
                         <input type="tel" placeholder="Enter amount e.g 500" id="current" class="form-control mt-2" data-min="<?php echo $min ?>" required />
                         <small>Minimum($<?php echo $min ?>)</small>
                         <div class="text-danger" id="err"></div>
-
                       </div>
-
                       <div class="text-center">
                         <button type="submit" id="btnPay" class="btn text-center btn-block w-100 btn-success" onclick="payWithPaystack()"> Make Payment </button>
                       </div>
@@ -108,7 +164,6 @@ $ref = bin2hex(random_bytes(11));
                         <input type="tel" name="amount" placeholder="Enter amount e.g 500" id="currentx" class="form-control mt-2" data-min="<?php echo $min ?>" required />
                         <small>Minimum($<?php echo $min ?>)</small>
                         <div class="text-danger" id="errx"></div>
-
                       </div>
 
                       <div class="text-center">
@@ -116,13 +171,8 @@ $ref = bin2hex(random_bytes(11));
                       </div>
                     </form>
                   </div>
-
                 </div>
               </div>
-
-
-
-
             </div>
             <div class="col-xl-3 xl-40">
               <?php include 'asider.php' ?>
@@ -140,9 +190,5 @@ $ref = bin2hex(random_bytes(11));
   </div>
 
   <?php include 'script.php' ?>
-
-
-
 </body>
-
 </html>
