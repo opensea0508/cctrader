@@ -5,7 +5,7 @@
   <?php include 'header.php' ?>
 
   <main>
-    <!-- slideshow content begin -->
+    <!-- slideshow content begin begin -->
     <div class="uk-section uk-padding-remove-vertical">
       <div class="in-slideshow uk-visible-toggle" data-uk-slideshow>
         <ul class="uk-slideshow-items">
