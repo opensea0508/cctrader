@@ -286,8 +286,17 @@ function getInfo($tableName, $data, $email, $value)
   return $result;
 }
 
-
-
+function getAmount($userId, $email, $value)
+{
+  $data = runQuery("SELECT SUM($value) as depositSum FROM ddeposit WHERE userid='$userId' AND demail='$email' AND dstatus='confirmed'");
+  if (numRows($data) > 0) {
+    $datas = fetchAssoc($data);
+    $result = $datas['depositSum'];
+  } else {
+    $result = 0;
+  }
+  return $result;
+}
 
 // Transform hours like "1:45" into the total number of minutes, "105". 
 function hoursToMinutes($hours)
@@ -307,16 +316,11 @@ function minutesToHours($minutes)
   $minutes -= $hours * 60;
   return sprintf("%d:%02.0f", $hours, $minutes);
 }
-
-
-
-
 function ratePerPeriod($id, $period, $km)
 {
   $sql = runQuery("SELECT * FROM `dsettings_rates` WHERE dcategoryid='$id'")->fetch_assoc();
   return '&#8358; ' . number_format($sql[$period] * $km);
 }
-
 
 function hoursToMins($hours)
 {
@@ -335,9 +339,6 @@ function hoursToMins($hours)
   return $duration;
 }
 
-
-
-
 function replace($data)
 {
   $data = str_replace(',', '', $data);
@@ -345,9 +346,6 @@ function replace($data)
   $data = str_replace('&#8358; ', '', $data);
   return $data;
 }
-
-
-
 
 function loginUser($email, $pass, $tablename)
 {
@@ -393,17 +391,16 @@ function changePassword($old, $pass, $email, $userid, $tableName = 'dlogin')
     runQuery("UPDATE $tableName SET dpass='$pass' WHERE demail='$email' AND userid='$userid' ");
     //   $_SESSION['msgs'] = "Updated successfully!";
     $_SESSION['msg'] = '<div class="alert alert-success" role="alert">
-                        <strong>Success!</strong> <br>
-                        Updated successfully!!
-                    </div>';
+                          <strong>Success!</strong> <br>
+                          Updated successfully!!
+                        </div>';
   } else {
     $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
-                        <strong>Fail!</strong> <br>
-                        Incorrect current password, try again later!
-                    </div>';
+                          <strong>Fail!</strong> <br>
+                          Incorrect current password, try again later!
+                        </div>';
   }
 }
-
 
 function universalImageUpload($fileName, $transid, $tableName, $position, $id = 'dimg', $int = '')
 {

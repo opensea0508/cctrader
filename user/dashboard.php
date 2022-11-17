@@ -129,7 +129,7 @@ $ref = bin2hex(random_bytes(11));
                       </style>
 
                       <ul class="list">
-                        <li><b>Deposit Amount:</b> <?php echo userHistory($user, $email, 'damount') ?></li>
+                        <li><b>Deposit Amount:</b> $<?php echo getAmount($user, $email, 'damount') ?></li>
                         <li><b>Number of Trades:</b> 0</li>
                         <li><b>Total Profit:</b> 23</li>
                         <li><b>Profit Ratio:</b> 2%</li>
@@ -208,6 +208,7 @@ $ref = bin2hex(random_bytes(11));
               <?php echo isset($_SESSION['msg']) ? $_SESSION['msg'] : "" ?>
 
               <form action="controller" method="post">
+
                 <div class="form-group">
                   <label for="">Principal Occupation:</label>
                   <input type="text" placeholder="Principal Occupation" name="occupation" class="form-control">
@@ -255,7 +256,6 @@ $ref = bin2hex(random_bytes(11));
                     <option value="Employed">Employed</option>
                   </select>
                 </div>
-
 
                 <div class="">
                   <label for="">Do you have any trading experience? </label>
@@ -316,11 +316,9 @@ $ref = bin2hex(random_bytes(11));
                   </select>
                 </div>
 
-
                 <div class="">
                   <label for="">My open position may be closed automatically when </label>
                   <div class="form-group ">
-
                     <div class="radio radio-primary " style="margin-left: 15px;">
                       <input id="radio11" type="radio" name="position" value="The market price is moving against me and I don’t have enough equity to maintain the position">
                       <label for="radio11">The market price is moving against me and I don’t have enough equity to maintain the position</label>
@@ -335,7 +333,6 @@ $ref = bin2hex(random_bytes(11));
                 <div class="">
                   <label for=""> Which of these general risk warnings is True? </label>
                   <div class="form-group ">
-
                     <div class="radio radio-primary " style="margin-left: 15px;">
                       <input id="radio111" type="radio" name="risk" value="Trading Futures/Derivatives, FX, and Options come with a risk of losing money due to leverage.">
                       <label for="radio111">Trading Futures/Derivatives, FX, and Options come with a risk of losing money due to leverage.</label>
@@ -345,11 +342,7 @@ $ref = bin2hex(random_bytes(11));
                       <label for="radio221">Trading Futures/Derivatives, FX, and Options do not have any risk of losing money due to leverage, it always produces a guaranteed profit</label>
                     </div>
                   </div>
-
-
-
                 </div>
-
 
                 <div class="form-group">
                   <label for="">How often do you want execution?</label>
@@ -365,13 +358,10 @@ $ref = bin2hex(random_bytes(11));
                   <label for="">What is your Expected Amount of Deposit ?</label>
                   <input type="text" name="amtDepo" class="form-control">
                 </div>
-
-
-
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Close</button>
-              <button class="btn btn-secondary" name="saveKyc" type="submit">Submit</button>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-secondary" name="saveKyc" type="submit">Submit</button>
               </form>
             </div>
           </div>
