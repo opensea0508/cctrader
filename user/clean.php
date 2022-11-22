@@ -111,10 +111,6 @@ function generateRandomString($length = 10)
   return substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($x)))), 1, $length);
 }
 
-
-
-
-
 function limitText($text, $limit)
 {
   if (str_word_count($text, 0) > $limit) {
@@ -292,6 +288,30 @@ function getAmount($userId, $email, $value)
   if (numRows($data) > 0) {
     $datas = fetchAssoc($data);
     $result = $datas['depositSum'];
+  } else {
+    $result = 0;
+  }
+  return $result;
+}
+
+function getTrades($userId, $email)
+{
+  $data = runQuery("SELECT COUNT('drequest') as tradeSum FROM dtrade_request WHERE userid='$userId' AND demail='$email'");
+  if (numRows($data) > 0) {
+    $datas = fetchAssoc($data);
+    $result = $datas['tradeSum'];
+  } else {
+    $result = 0;
+  }
+  return $result;
+}
+
+function getTotalProfit($userId, $email, $value)
+{
+  $data = runQuery("SELECT SUM($value) as totalProfit FROM dtrade_request WHERE userid='$userId' AND demail='$email'");
+  if (numRows($data) > 0) {
+    $datas = fetchAssoc($data);
+    $result = $datas['totalProfit'];
   } else {
     $result = 0;
   }

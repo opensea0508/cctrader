@@ -130,9 +130,9 @@ $ref = bin2hex(random_bytes(11));
 
                       <ul class="list">
                         <li><b>Deposit Amount:</b> $<?php echo getAmount($user, $email, 'damount') ?></li>
-                        <li><b>Number of Trades:</b> 0</li>
-                        <li><b>Total Profit:</b> 23</li>
-                        <li><b>Profit Ratio:</b> 2%</li>
+                        <li><b>Number of Trades:</b> <?php echo getTrades($user, $email) ?></li>
+                        <li><b>Total Profit:</b> <?php echo getTotalProfit($user, $email, 'dprofit') ?></li>
+                        <li><b>Profit Ratio:</b> <?php echo  number_format(getTotalProfit($user, $email, 'dprofit') * 100 / getAmount($user, $email, 'damount'), 2) ?>%</li>
                         <li><b>Total gold assets Holding:</b> 0</li>
                         <li><b>Commission:</b> 3%</li>
                         <!-- <li><b>Number of Trades:</b> <?php echo userInfo($user, $email, 'demail') ?></li>
@@ -358,10 +358,10 @@ $ref = bin2hex(random_bytes(11));
                   <label for="">What is your Expected Amount of Deposit ?</label>
                   <input type="text" name="amtDepo" class="form-control">
                 </div>
-              </div>
-              <div class="modal-footer">
-                <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Close</button>
-                <button class="btn btn-secondary" name="saveKyc" type="submit">Submit</button>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Close</button>
+              <button class="btn btn-secondary" name="saveKyc" type="submit">Submit</button>
               </form>
             </div>
           </div>
