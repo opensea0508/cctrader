@@ -171,6 +171,11 @@ $ref = bin2hex(random_bytes(11));
                                     class="btn btn-primary">Margin Email Notification </button>
 
                                   <a href="javascript:void(0)" data-bs-toggle="modal"  data-bs-target="#exampleModal" class="btn btn-dark mt-2b">Topup Wallet</a>
+                                  <?php if($row['isTrader']==false){ ?>
+                                    <a class="btn btn-primary" data-id="<?php echo $row['userid']  ?>" data-email="<?php echo $row['demail']  ?>" data-status="client" id="setAsTrader">Set As Trader</a>
+                                    <?php }else{ ?>
+                                    <a class="btn btn-primary" data-id="<?php echo $row['userid']  ?>" data-email="<?php echo $row['demail']  ?>" data-status="trader" id="setAsTrader">Set As Not Trader</a>
+                                    <?php } ?>
                                 <a class="btn btn-danger" data-id="<?php echo $row['userid']  ?>" data-email="<?php echo $row['demail']  ?>" data-status="banned" id="banUser" href="javascript:void(0)">Ban User</a>
                                 <?php }else{ ?>
                                 <a class="btn btn-danger" data-id="<?php echo $row['userid']  ?>" data-email="<?php echo $row['demail']  ?>" data-status="active" id="banUser" href="javascript:void(0)">Unban User</a>

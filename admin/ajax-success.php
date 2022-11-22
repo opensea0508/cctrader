@@ -94,6 +94,13 @@ if (isset($_POST['Message']) and $_POST['Message'] == 'Ban') {
   updateReg($id, $email, 'dstatus', $status);
 }
 
+if (isset($_POST['Message']) and $_POST['Message'] == 'Trader') {
+  $id = clean($_POST['id']['userid']);
+  $email = clean($_POST['id']['email']);
+  $status = clean($_POST['id']['status']) == "client" ? true : false;
+  updateReg($id, $email, 'isTrader', $status);
+}
+
 if (isset($_POST['Message']) and $_POST['Message'] == 'approveReq') {
   $id = clean($_POST['id']['id']);
   $userid = clean($_POST['id']['userid']);

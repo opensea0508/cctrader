@@ -12,6 +12,17 @@ $(document).ready(function(){
         newMagic("Are you sure?", text, 'ajax-success', 'Ban', userArray, status,'');
     })
 
+    $(document).on("click", "#setAsTrader", function(){
+        userArray = {
+            'userid':$(this).attr('data-id'),
+            "email":$(this).attr('data-email'),
+            "status":$(this).attr('data-status')
+        };
+        let status = userArray.status =="client"?"Became A Trader. Congrats!":"You are no longer a trader";
+        text = 'Press yes button to continue...'
+        newMagic("Are you sure?", text, 'ajax-success', 'Trader', userArray, status,'');
+    })
+
     $(document).on("click", "#approveReq", function(){
         userArray = {
             'id':$(this).attr('data-id'),
