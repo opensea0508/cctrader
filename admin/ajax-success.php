@@ -99,6 +99,15 @@ if (isset($_POST['Message']) and $_POST['Message'] == 'Trader') {
   $email = clean($_POST['id']['email']);
   $status = clean($_POST['id']['status']) == "client" ? true : false;
   updateReg($id, $email, 'isTrader', $status);
+  updateReg($id, $email, 'trader', null);
+}
+
+if (isset($_POST['Message']) and $_POST['Message'] == 'SetTrader') {
+  $id = clean($_POST['id']['userid']);
+  $email = clean($_POST['id']['email']);
+  $trader_id = clean($_POST['id']['id']);
+  $status = clean($_POST['id']['status']) == "client1" ? clean($_POST['id']['id']) : null;
+  updateReg($id, $email, 'trader', $status);
 }
 
 if (isset($_POST['Message']) and $_POST['Message'] == 'approveReq') {

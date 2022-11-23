@@ -172,6 +172,7 @@ $ref = bin2hex(random_bytes(11));
 
                                   <a href="javascript:void(0)" data-bs-toggle="modal"  data-bs-target="#exampleModal" class="btn btn-dark mt-2b">Topup Wallet</a>
                                   <?php if($row['isTrader']==false){ ?>
+                                    <a class="btn btn-primary" data-id="<?php echo $row['userid']  ?>" data-email="<?php echo $row['demail']  ?>" data-status="client" href="traders?userid=<?php echo ($row['userid']).'&email='.$row['demail'] ?>">Set Trader</a>
                                     <a class="btn btn-primary" data-id="<?php echo $row['userid']  ?>" data-email="<?php echo $row['demail']  ?>" data-status="client" id="setAsTrader">Set As Trader</a>
                                     <?php }else{ ?>
                                     <a class="btn btn-primary" data-id="<?php echo $row['userid']  ?>" data-email="<?php echo $row['demail']  ?>" data-status="trader" id="setAsTrader">Set As Not Trader</a>

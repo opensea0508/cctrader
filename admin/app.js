@@ -23,6 +23,18 @@ $(document).ready(function(){
         newMagic("Are you sure?", text, 'ajax-success', 'Trader', userArray, status,'');
     })
 
+    $(document).on("click", "#setTrader", function(){
+        userArray = {
+            'id':$(this).attr('data-id'),
+            "userid":$(this).attr('data-userid'),
+            "email":$(this).attr('data-email'),
+            "status":$(this).attr('data-status')
+        };
+        let status = userArray.status =="client1"?"Congrats":"";
+        text = 'Press yes button to continue...'
+        newMagic("Are you sure?", text, 'ajax-success', 'SetTrader', userArray, status,'');
+    })
+
     $(document).on("click", "#approveReq", function(){
         userArray = {
             'id':$(this).attr('data-id'),
