@@ -77,6 +77,26 @@ if (isset($_POST['Message']) and $_POST['Message'] == 'canReq') {
   updateFire('dhistory', "dstatus='Cancelled'", "userid='$userid' AND demail='$email' AND tid='$id'");
 }
 
+if (isset($_POST['Message']) and $_POST['Message'] == 'paidComReq') {
+  $userid = clean($_POST['id']['user']);
+  $email = clean($_POST['id']['email']);
+  $id = clean($_POST['id']['id']);
+  $amount = clean($_POST['id']['amount']);
+  
+  $balance = (int)userInfo($userid, $email, 'dwallet') + (int)$amount;
+  updateFire('dregister', "dwallet='$balance'", "userid='$userid' AND demail='$email'");
+
+  updateFire('dhistory', "dstatus='Paid'", "userid='$userid' AND demail='$email' AND tid='$id' ");
+}
+
+if (isset($_POST['Message']) and $_POST['Message'] == 'canComReq') {
+  $userid = clean($_POST['id']['user']);
+  $email = clean($_POST['id']['email']);
+  $id = clean($_POST['id']['id']);
+
+  updateFire('dhistory', "dstatus='Cancelled'", "userid='$userid' AND demail='$email' AND tid='$id'");
+}
+
 
 
 
@@ -108,6 +128,14 @@ if (isset($_POST['Message']) and $_POST['Message'] == 'SetTrader') {
   $trader_id = clean($_POST['id']['id']);
   $status = clean($_POST['id']['status']) == "client1" ? clean($_POST['id']['id']) : null;
   updateReg($id, $email, 'trader', $status);
+}
+
+if (isset($_POST['Message']) and $_POST['Message'] == 'SetReferer') {
+  $id = clean($_POST['id']['userid']);
+  $email = clean($_POST['id']['email']);
+  $trader_id = clean($_POST['id']['id']);
+  $status = clean($_POST['id']['status']) == "client1" ? clean($_POST['id']['id']) : null;
+  updateReg($id, $email, 'upliner', $status);
 }
 
 if (isset($_POST['Message']) and $_POST['Message'] == 'approveReq') {

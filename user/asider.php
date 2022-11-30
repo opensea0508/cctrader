@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-body ">
+    <div class="card-body">
         <h3 class="">Wallet Balance</h3>
         <h4 class="">$<?php echo (userInfo($user, $email, 'dwallet') != 0) ? number_format(userInfo($user, $email, 'dwallet')) : '0.00' ?></h4>
         <hr>

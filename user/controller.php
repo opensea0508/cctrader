@@ -5,6 +5,7 @@ $code = bin2hex(random_bytes(6)) . date("Ymdhis");
 $email = $_SESSION['email'];
 $userid = $_SESSION['userid'];
 $folder = 'files';
+$dcommission = [5, 3, 1.5, 0.5];
 
 require '../image_php/class.upload.php';
 $transid = date("Ymdhis");
@@ -59,6 +60,38 @@ if (isset($_POST['saveRequest'])) {
   $balance = (int)userInfo($userid, $email, 'dwallet') - (int)$amount;
 
   runQuery("INSERT INTO  dhistory SET tid='$code', userid='$userid', demail='$email', dname='Withdrawal request', ddebit='$amount', damount='$amount', dwallet_balance='$balance', dtype='withdraw', ddate='$date', dpay='$method'");
+  $trader = userInfo($userid, $email, 'trader');
+  $upliner = [];
+  $dwallet = [];
+  for($i=0; $i<4; $i++) {
+    if($i == 0) {
+      $id = userInfo($userid, $email, 'id');
+    } else {
+      $id = $upliner[$i-1];
+    }
+    $wall = runQuery("SELECT upliner, dwallet, userid, demail FROM dregister WHERE id='$id'")->fetch_assoc();
+    if($wall['upliner']) {
+      $upliner[$i] = $wall['upliner'];
+      $dwallet[$i] = $wall['dwallet'];
+    } else {
+      break;
+    }
+  }
+  $wall = runQuery("SELECT userid, demail FROM dregister WHERE id='$trader'")->fetch_assoc();
+  $duserid = $wall['userid'];
+  $demail = $wall['demail'];
+  $code = bin2hex(random_bytes(6)) . date("Ymdhis");
+  runQuery("INSERT INTO  dhistory SET tid='$code', userid='$duserid', demail='$demail', dname='trader commission', damount='$amount', dtype='commission', ddate='$date', dcommission='10'");
+
+  $len = count($upliner);
+  for($i=0; $i<$len; $i++) {
+    $wall = runQuery("SELECT userid, demail FROM dregister WHERE id='$upliner[$i]'")->fetch_assoc();
+    $duserid = $wall['userid'];
+    $demail = $wall['demail'];
+    $ddcommission = $dcommission[$i];
+    $code = bin2hex(random_bytes(6)) . date("Ymdhis");
+    runQuery("INSERT INTO  dhistory SET tid='$code', userid='$duserid', demail='$demail', dname='upliner commission', damount='$amount', dtype='commission', ddate='$date', dcommission='$ddcommission'");
+  }
   updateFire('dregister', "dwallet='$balance'", "userid='$userid' AND demail='$email'");
 
   $_SESSION['msgs'] = 'Your request has been submitted successfully.';

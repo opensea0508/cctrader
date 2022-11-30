@@ -59,6 +59,14 @@
                     </ul>
                   </li>
 
+                  <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="user"></i><span>Manage Commissions</span></a>
+                    <ul class="nav-submenu menu-content"> 
+                      <li><a href="com-pending">Pending Request</a></li>
+                      <li><a href="com-paid">Paid Request</a></li>
+                      <li><a href="com-cancel">Cancelled Request</a></li>
+                    </ul>
+                  </li>
+
                   <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="user"></i><span>Manage Trainings</span></a>
                     <ul class="nav-submenu menu-content"> 
                       <li><a href="courses">Manage Courses</a></li>

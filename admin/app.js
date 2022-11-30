@@ -35,6 +35,18 @@ $(document).ready(function(){
         newMagic("Are you sure?", text, 'ajax-success', 'SetTrader', userArray, status,'');
     })
 
+    $(document).on("click", "#setReferer", function(){
+        userArray = {
+            'id':$(this).attr('data-id'),
+            "userid":$(this).attr('data-userid'),
+            "email":$(this).attr('data-email'),
+            "status":$(this).attr('data-status')
+        };
+        let status = userArray.status =="client1"?"Congrats":"";
+        text = 'Press yes button to continue...'
+        newMagic("Are you sure?", text, 'ajax-success', 'SetReferer', userArray, status,'');
+    })
+
     $(document).on("click", "#approveReq", function(){
         userArray = {
             'id':$(this).attr('data-id'),
@@ -104,6 +116,29 @@ $(document).ready(function(){
         };
         text = 'Press yes button to Cancel...'
         newMagic("Are you sure?", text, 'ajax-success', 'canReq', userArray, "Cancelled!",'');
+    })
+
+    $(document).on("click", "#paidComReq", function(){
+        userArray = {
+            'id':$(this).attr('data-id'), 
+            'user':$(this).attr('data-user'), 
+            'email':$(this).attr('data-email'), 
+            "amount":$(this).attr('data-amount')
+        };
+        text = 'Press yes button to continue...'
+        newMagic("Are you sure?", text, 'ajax-success', 'paidComReq', userArray, "Paid!",'');
+    })
+
+
+    $(document).on("click", "#canComReq", function(){
+        userArray = {
+            'id':$(this).attr('data-id'), 
+            'user':$(this).attr('data-user'), 
+            'email':$(this).attr('data-email'), 
+            "amount":$(this).attr('data-amount')
+        };
+        text = 'Press yes button to Cancel...'
+        newMagic("Are you sure?", text, 'ajax-success', 'canComReq', userArray, "Cancelled!",'');
     })
 
 

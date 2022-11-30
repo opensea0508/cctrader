@@ -31,9 +31,6 @@ $(document).ready(function(){
     //     text = 'Press yes button to continue...'
     //     newMagic("Are you sure?", text, 'ajax-success', 'verifyAccount', userArray, status,'');
     // })
-
-
-
 })
 
 
