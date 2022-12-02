@@ -146,7 +146,11 @@ $ref = bin2hex(random_bytes(11));
                         <!-- <label for="amount"><b style="color:#000">Enter Amount</b></label> -->
                         <label for="amount"><b style="color:#000">Enter Amount (<?php echo $rate['drate'] ?>/$)</b></label>
                         <input type="tel" placeholder="Enter amount e.g 500" id="current" class="form-control mt-2" data-min="<?php echo $min ?>" required />
+                        <?php if($min > 1) {?>
                         <small>Minimum($<?php echo $min ?>)</small>
+                        <?php } else { ?>
+                          <small>Minimum($100)</small>
+                        <?php } ?>
                         <div class="text-danger" id="err"></div>
                       </div>
                       <div class="text-center">
@@ -162,7 +166,11 @@ $ref = bin2hex(random_bytes(11));
                       <div class="form-group">
                         <label for="amount"><b style="color:#000">Enter Amount </b></label>
                         <input type="tel" name="amount" placeholder="Enter amount e.g 500" id="currentx" class="form-control mt-2" data-min="<?php echo $min ?>" required />
+                        <?php if($min > 1) {?>
                         <small>Minimum($<?php echo $min ?>)</small>
+                        <?php } else { ?>
+                          <small>Minimum($100)</small>
+                        <?php } ?>
                         <div class="text-danger" id="errx"></div>
                       </div>
 

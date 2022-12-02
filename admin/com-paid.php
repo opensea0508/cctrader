@@ -63,7 +63,7 @@ $ref = bin2hex(random_bytes(11));
                     <td><?php echo ucfirst($wall['dstatus']); ?></td>
                     <td>
 
-                        <a href="with-details?tid=<?php echo $wall['tid']; ?>" class="btn btn-xs btn-info">Details</a>
+                        <a href="com-details?tid=<?php echo $wall['tid']; ?>" class="btn btn-xs btn-info">Details</a>
 
 
                     </td>

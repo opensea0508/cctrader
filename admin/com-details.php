@@ -87,7 +87,7 @@ $comPercent = 0;
                     </tr>
 
                     <tr>
-                        <th>Commission Percent</th>
+                        <th>Commission Percent (%)</th>
                         <td>
                           <input id="comPercent" type="text" size="30" value="<?php echo ucfirst($wall['dcommission']); ?>" onchange="changeComPercent()"/>
                         </td>                     

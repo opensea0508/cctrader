@@ -147,6 +147,63 @@ $ref = bin2hex(random_bytes(11));
 
                 </div>
               </div>
+              <?php 
+                $isTrader = userInfo($user, $email, 'isTrader');
+                $traderId = userInfo($user, $email, 'id');
+                if($isTrader){
+              ?>
+                <div class="row">
+                  <div class="col-xl-12 col-sm-6">
+                    <div class="card">
+                      <div class="card-body">
+                      
+                      <h4>Assigned Client</h4> 
+
+                      <hr>
+                    <?php 
+                    
+                      $sql = runQuery("SELECT dregister.dfname AS dfname, dtrading.ddate AS ddate, dtrading.tid AS tid, dtrading.dfrom AS dfrom, dtrading.dto AS dto FROM dregister LEFT JOIN dtrading ON dregister.userid=dtrading.userid WHERE trader=$traderId ORDER BY dregister.id DESC LIMIT 200");
+                      if(numRows($sql)>0){
+                    ?>
+                      <div class="table-responsive" style="min-height: 250px;">
+                        <table class="table">
+                          <tr>
+                            <th>Date</th>
+                            <th>Fullname</th>
+                            <th>Trading ID</th>
+                            <th>From</th>
+                            <th>To</th>
+                          </tr>
+
+                          <?php while($row=fetchAssoc($sql)){?>
+                            <tr>
+                            <td><?php echo date("d M, Y", strtotime($row['ddate'])) ?></td>  
+                            <td><?php echo $row['dfname']  ?></td>
+                            <td><?php echo $row['tid']  ?></td>
+                            <td><?php echo date("d M, Y", strtotime($row['dfrom'])) ?></td>
+                            <td><?php echo date("d M, Y", strtotime($row['dto'])) ?></td>
+                            </tr>
+                            <?php } ?>
+
+
+
+                        </table>
+                      </div>
+
+                      <?php } ?>
+
+
+
+
+                      
+                      </div>
+                    </div>
+                  </div>
+                  
+                
+                  
+                </div>
+              <?php } ?>
             </div>
             <div class="col-xl-3 xl-40">
               <?php include 'asider.php' ?>
@@ -155,70 +212,7 @@ $ref = bin2hex(random_bytes(11));
         </div>
         <!-- Container-fluid Ends-->
         <!-- Container-fluid starts-->
-        <?php 
-          $isTrader = userInfo($user, $email, 'isTrader');
-          $traderId = userInfo($user, $email, 'id');
-          if($isTrader){
-        ?>
-        <div class="container-fluid">
-          <div class="row ">
-            <div class="col-xl-12">
-              <div class="row">
-                <div class="col-xl-12 col-sm-6">
-                  <div class="card">
-                    <div class="card-body">
-                    
-                    <h4>Assigned Client</h4> 
 
-                    <hr>
-                  <?php 
-                  
-                    $sql = runQuery("SELECT dregister.dfname AS dfname, dtrading.ddate AS ddate, dtrading.tid AS tid, dtrading.dfrom AS dfrom, dtrading.dto AS dto FROM dregister LEFT JOIN dtrading ON dregister.userid=dtrading.userid WHERE trader=$traderId ORDER BY dregister.id DESC LIMIT 200");
-                    if(numRows($sql)>0){
-                  ?>
-                    <div class="table-responsive" style="min-height: 250px;">
-                      <table class="table">
-                        <tr>
-                          <th>Date</th>
-                          <th>Fullname</th>
-                          <th>Trading ID</th>
-                          <th>From</th>
-                          <th>To</th>
-                        </tr>
-
-                        <?php while($row=fetchAssoc($sql)){?>
-                          <tr>
-                          <td><?php echo date("d M, Y", strtotime($row['ddate'])) ?></td>  
-                          <td><?php echo $row['dfname']  ?></td>
-                          <td><?php echo $row['tid']  ?></td>
-                          <td><?php echo date("d M, Y", strtotime($row['dfrom'])) ?></td>
-                          <td><?php echo date("d M, Y", strtotime($row['dto'])) ?></td>
-                          </tr>
-                          <?php } ?>
-
-
-
-                      </table>
-                    </div>
-
-                    <?php } ?>
-
-
-
-
-                    
-                    </div>
-                  </div>
-                </div>
-                
-              
-                
-              </div>
-            </div>
-            
-          </div>
-        </div>
-        <?php } ?>
         <!-- Container-fluid Ends-->
       </div>
       <!-- tap on top starts-->
