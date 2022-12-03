@@ -63,7 +63,6 @@ if (isset($_POST['saveRequest'])) {
   $origin_code = $code;
   $trader = userInfo($userid, $email, 'trader');
   $upliner = [];
-  $dwallet = [];
   for($i=0; $i<4; $i++) {
     if($i == 0) {
       $id = userInfo($userid, $email, 'id');
@@ -73,16 +72,17 @@ if (isset($_POST['saveRequest'])) {
     $wall = runQuery("SELECT upliner, dwallet, userid, demail FROM dregister WHERE id='$id'")->fetch_assoc();
     if($wall['upliner']) {
       $upliner[$i] = $wall['upliner'];
-      $dwallet[$i] = $wall['dwallet'];
     } else {
       break;
     }
   }
-  $wall = runQuery("SELECT userid, demail FROM dregister WHERE id='$trader'")->fetch_assoc();
-  $duserid = $wall['userid'];
-  $demail = $wall['demail'];
-  $code = bin2hex(random_bytes(6)) . date("Ymdhis");
-  runQuery("INSERT INTO  dhistory SET tid='$code', userid='$duserid', demail='$demail', dname='trader commission', damount='$amount', dtype='commission', ddate='$date', dcommission='10', original_tid='$origin_code'");
+  if($trader) {
+    $wall = runQuery("SELECT userid, demail FROM dregister WHERE id='$trader'")->fetch_assoc();
+    $duserid = $wall['userid'];
+    $demail = $wall['demail'];
+    $code = bin2hex(random_bytes(6)) . date("Ymdhis");
+    runQuery("INSERT INTO  dhistory SET tid='$code', userid='$duserid', demail='$demail', dname='trader commission', damount='$amount', dtype='commission', ddate='$date', dcommission='10', original_tid='$origin_code'");
+  }
 
   $len = count($upliner);
   for($i=0; $i<$len; $i++) {

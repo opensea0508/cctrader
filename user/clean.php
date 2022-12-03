@@ -294,6 +294,18 @@ function getAmount($userId, $email, $value)
   return $result;
 }
 
+function getCommission($userId, $email, $value)
+{
+  $data = runQuery("SELECT SUM($value) as commissionSum FROM dhistory WHERE userid='$userId' AND demail='$email' AND dstatus='paid' AND dtype='commission'");
+  if (numRows($data) > 0) {
+    $datas = fetchAssoc($data);
+    $result = $datas['commissionSum'];
+  } else {
+    $result = 0;
+  }
+  return $result;
+}
+
 function getTrades($userId, $email)
 {
   $data = runQuery("SELECT COUNT('drequest') as tradeSum FROM dtrade_request WHERE userid='$userId' AND demail='$email'");

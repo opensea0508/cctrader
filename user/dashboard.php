@@ -133,9 +133,9 @@ $ref = bin2hex(random_bytes(11));
                         <li><b>Deposit Amount:</b> $<?php echo getAmount($user, $email, 'damount') ?></li>
                         <li><b>Number of Trades:</b> <?php echo getTrades($user, $email) ?></li>
                         <li><b>Total Profit:</b> <?php echo getTotalProfit($user, $email, 'dprofit') ?></li>
-                        <!-- <li><b>Profit Ratio:</b> <?php echo  number_format(getTotalProfit($user, $email, 'dprofit') * 100 / getAmount($user, $email, 'damount'), 2) ?>%</li> -->
+                        <li><b>Profit Ratio:</b> <?php echo  number_format(getTotalProfit($user, $email, 'dprofit') * 100 / getAmount($user, $email, 'damount'), 2) ?>%</li>
                         <li><b>Total gold assets Holding:</b> 0</li>
-                        <li><b>Commission:</b> 3%</li>
+                        <li><b>Commission:</b>$<?php echo getCommission($user, $email, 'damount') ?></li>
                         <!-- <li><b>Number of Trades:</b> <?php echo userInfo($user, $email, 'demail') ?></li>
                         <li><b>Total Profit:</b> <?php echo userInfo($user, $email, 'dwalletAddress') ?></li>
                         <li><b>Profit Ratio:</b> <?php echo userInfo($user, $email, 'daddress') ?></li>

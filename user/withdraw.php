@@ -61,17 +61,36 @@ $ref = bin2hex(random_bytes(11));
                     <hr>
                      
                       <div class="">
-                        
+                        <?php 
+                          $upliner = [];
+                          for($i=0; $i<4; $i++) {
+                            if($i == 0) {
+                              $id = userInfo($user, $email, 'id');
+                            } else {
+                              $id = $upliner[$i-1];
+                            }
+                            $wall = runQuery("SELECT upliner, dwallet, userid, demail FROM dregister WHERE id='$id'")->fetch_assoc();
+                            if($wall['upliner']) {
+                              $upliner[$i] = $wall['upliner'];
+                            } else {
+                              break;
+                            }
+                          }
+                          $len = count($upliner);
+                        ?>
 
                         <ul class="list-group list-group-flush">
-                          <li class="list-group-item"> Withdrawal amount $<?php echo $amount; ?>.</li> 
-                        <?php if($cat=="category 1"){ ?>  
-                          <li class="list-group-item"> Expected amount to be paid $<?php echo number_format($amount * 0.7) ?></li> 
-                          <li class="list-group-item"> Performance Fees $<?php echo number_format($amount * 0.3) ?>.</li> 
-                          <?php }else{?>  
-                          <li class="list-group-item"> Expected amount to be paid $<?php echo number_format($amount * 0.8) ?></li> 
-                          <li class="list-group-item"> Performance Fees $<?php echo number_format($amount * 0.2) ?>.</li> 
-                          <?php }?>
+                          <li class="list-group-item" id="withdrawalAmount">Withdrawal amount $ </li> 
+                          <li class="list-group-item" id="expectedAmount">Expected amount $</li> 
+                          <li class="list-group-item" id="performanceFee">Performance fees $</li> 
+                          <li class="list-group-item" id="tradersCommission">Trader commission $</li> 
+                          <li class="list-group-item" id="firstUplinerCommission">First up liner commission $</li> 
+                          <li class="list-group-item" id="secondUplinerCommission">Second up liner commission $</li> 
+                          <li class="list-group-item" id="thirdUplinerCommission">Third up liner commission $</li> 
+                          <li class="list-group-item" id="fourthUplinerCommission">Fourth up liner commission $</li> 
+                          <li class="list-group-item" id="managementFee">Management fees $</li> 
+
+                      
                         </ul>
     
                       </div>
@@ -173,22 +192,64 @@ $ref = bin2hex(random_bytes(11));
   
 <script>
   $(document).ready(function(){
+    var len = <?php echo $len ?>;
+    if(len == 0) {
+        $("#firstUplinerCommission").remove();
+        $("#secondUplinerCommission").remove();
+        $("#thirdUplinerCommission").remove();
+        $("#fourthUplinerCommission").remove();
+      } else if(len == 1) {
+        $("#secondUplinerCommission").remove();
+        $("#thirdUplinerCommission").remove();
+        $("#fourthUplinerCommission").remove();
+      } else if(len == 2) {
+        $("#thirdUplinerCommission").remove();
+        $("#fourthUplinerCommission").remove();
+      } else {
+        $("#fourthUplinerCommission").remove();
+      }
     $(document).on("keyup", "#amountX", function(){
-      var amount = Number($("#amountX").val())
+      var amount = Number($("#amountX").val());
       var balance = Number($(this).attr('data-wallet'));
       var minWith = Number($(this).attr('data-min'));
 
-      $("#errE").html("")
+      $("#errE").html("");
       $("#btnReq").prop("disabled", false);
+      var isError = false;
       if(amount > balance){
         $("#btnReq").prop("disabled", true);
-        $("#errE").html("Invalid amount entered")
+        $("#errE").html("Invalid amount entered");
       }
       if(amount < minWith){
         $("#btnReq").prop("disabled", true);
         $("#errE").html("Minimum request for withdrawal is $"+minWith)
       }
-
+      var len = <?php echo $len ?>;
+      $("#withdrawalAmount").html("Withdrawal amount $" + amount);
+      $("#expectedAmount").html("Expected amount $" + (amount*0.68));
+      $("#performanceFee").html("Performance fees $" + (amount*0.1));
+      $("#managementFee").html("Management fees $" + (amount*0.02));
+      if(len == 0) {
+        $("#tradersCommission").html("Traders commission $" + (amount*0.2));
+      } else if(len == 1) {
+        $("#tradersCommission").html("Traders commission $" + (amount*0.1));
+        $("#firstUplinerCommission").html("First up liner commission $" + (amount*0.1));
+      } else if(len == 2) {
+        $("#tradersCommission").html("Traders commission $" + (amount*0.1));
+        $("#firstUplinerCommission").html("First up liner commission $" + (amount*0.05));
+        $("#secondUplinerCommission").html("Second up liner commission $" + (amount*0.05));
+      } else if(len == 3) {
+        $("#tradersCommission").html("Traders commission $" + (amount*0.1));
+        $("#firstUplinerCommission").html("First up liner commission $" + (amount*0.05));
+        $("#secondUplinerCommission").html("Second up liner commission $" + (amount*0.03));
+        $("#thirdUplinerCommission").html("Third up liner commission $" + (amount*0.2));
+      } else {
+        $("#tradersCommission").html("Traders commission $" + (amount*0.1));
+        $("#firstUplinerCommission").html("First up liner commission $" + (amount*0.05));
+        $("#secondUplinerCommission").html("Second up liner commission $" + (amount*0.03));
+        $("#thirdUplinerCommission").html("Third up liner commission $" + (amount*0.015));
+        $("#fourthUplinerCommission").html("Fourth up liner commission $" + (amount*0.005));
+      }
     })
   })
 </script>
