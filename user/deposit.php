@@ -197,7 +197,9 @@ $ref = bin2hex(random_bytes(11));
                         <li class="list-group-item"> Minimum amount $100</li>
                         <li class="list-group-item"> Minimum Deliverable 50 Gram</li>
                         <li class="list-group-item"> Commission 5%</li>
+                        <li class="list-group-item">Note: All spot Contract are executed through an organised & Regulated Exchange. You shall be responsible for delivery logistics. </li>
                       </ul>
+
                       <div class="text-center mt-2">
                         <a href="depo?id=6" class="btn btn-primary w-100">Make A Deposit</a>
                       </div>
