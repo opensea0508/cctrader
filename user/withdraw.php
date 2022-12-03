@@ -62,6 +62,9 @@ $ref = bin2hex(random_bytes(11));
                      
                       <div class="">
                         <?php 
+                        $id = userInfo($user, $email, 'id');
+                        $traderQuery = runQuery("SELECT trader FROM dregister WHERE id='$id'")->fetch_assoc();
+                        $trader = $traderQuery['trader'];
                           $upliner = [];
                           for($i=0; $i<4; $i++) {
                             if($i == 0) {
@@ -77,20 +80,182 @@ $ref = bin2hex(random_bytes(11));
                             }
                           }
                           $len = count($upliner);
-                          $traderQuery = runQuery("SELECT trader FROM dregister WHERE id='$id'")->fetch_assoc();
-                          $trader = $traderQuery['trader'];
                         ?>
 
                         <ul class="list-group list-group-flush">
-                          <li class="list-group-item" id="withdrawalAmount">Withdrawal amount $ </li> 
-                          <li class="list-group-item" id="expectedAmount">Expected amount $</li> 
-                          <li class="list-group-item" id="performanceFee">Performance fees $</li> 
-                          <li class="list-group-item" id="tradersCommission">Trader commission $</li> 
-                          <li class="list-group-item" id="firstUplinerCommission">First up liner commission $</li> 
-                          <li class="list-group-item" id="secondUplinerCommission">Second up liner commission $</li> 
-                          <li class="list-group-item" id="thirdUplinerCommission">Third up liner commission $</li> 
-                          <li class="list-group-item" id="fourthUplinerCommission">Fourth up liner commission $</li> 
-                          <li class="list-group-item" id="managementFee">Management fees $</li> 
+                        <?php if(($cat == 'Category 1') || ($cat == 'Category 2')) {
+                            
+                            ?>
+                          <li class="list-group-item" id="expectedAmount">Expected amount: 65%</li> 
+                          <li class="list-group-item" id="performanceFee">
+                          <?php if(($trader == null) && $len ==0) { ?>Performance fees: 30%
+                            <?php } elseif((($trader != null) && $len == 0)) { ?>Performance fees: 20%
+                            <?php } elseif(($trader != null) && $len == 1) {?>Performance fees: 10%
+                            <?php } elseif(($trader != null) && $len == 2) {?>Performance fees: 12%
+                            <?php } elseif(($trader != null) && $len == 3) {?>Performance fees: 10.5%
+                            <?php } elseif(($trader != null) && $len == 4) {?>Performance fees: 10%
+                            <?php } elseif(($trader == null) && $len == 1) {?>Performance fees: 20%
+                            <?php } elseif(($trader == null) && $len == 2) {?>Performance fees: 22%
+                            <?php } elseif(($trader == null) && $len == 3) {?>Performance fees: 20.5%
+                            <?php } else {?>Performance fees: 20%
+                            <?php } ?>
+                          </li> 
+                          <?php if($trader) {?>
+                          <li class="list-group-item" id="tradersCommission">Trader commission: 10%</li> 
+                          <?php } ?>
+                          <?php if($len >= 1){ ?>
+                          <li class="list-group-item" id="firstUplinerCommission">
+                            <?php if($len == 1) {?>
+                            First up liner commission: 10%
+                            <?php } else {?>
+                              First up liner commission: 5%
+                            <?php } ?>
+                          </li>
+                          <?php } ?>
+
+                          <?php if($len >= 2){ ?>
+                          <li class="list-group-item" id="secondUplinerCommission">Second up liner commission: 3%</li> 
+                          <?php } ?>
+
+                          <?php if($len >= 3){ ?>
+                          <li class="list-group-item" id="thirdUplinerCommission">Third up liner commission: 1.5%</li> 
+                          <?php } ?>
+
+                          <?php if($len >= 4){ ?>
+                          <li class="list-group-item" id="fourthUplinerCommission">Fourth up liner commission: 0.5%</li> 
+                          <?php } ?>
+
+                          <li class="list-group-item" id="managementFee">Management fees: 5%</li> 
+                        <?php }?>
+                        <?php if(($cat == 'Category 3')) {
+                            
+                            ?>
+                          <li class="list-group-item" id="expectedAmount">Expected amount: 70%</li> 
+                          <li class="list-group-item" id="performanceFee">
+                            <?php if(($trader == null) && $len ==0) { ?>Performance fees: 30%
+                            <?php } elseif(($trader != null) && $len == 0) { ?>Performance fees: 20%
+                            <?php } elseif(($trader != null) && $len == 1) {?>Performance fees: 10%
+                            <?php } elseif(($trader != null) && $len == 2) {?>Performance fees: 12%
+                            <?php } elseif(($trader != null) && $len == 3) {?>Performance fees: 10.5%
+                            <?php } elseif(($trader != null) && $len == 4) {?>Performance fees: 10%
+                            <?php } elseif(($trader == null) && $len == 1) {?>Performance fees: 20%
+                            <?php } elseif(($trader == null) && $len == 2) {?>Performance fees: 22%
+                            <?php } elseif(($trader == null) && $len == 3) {?>Performance fees: 20.5%
+                            <?php } else {?>Performance fees: 20%
+                            <?php } ?>
+                          </li> 
+                          <?php if($trader) {?>
+                          <li class="list-group-item" id="tradersCommission">Trader commission: 10%</li> 
+                          <?php } ?>
+                          <?php if($len >= 1){ ?>
+                          <li class="list-group-item" id="firstUplinerCommission">
+                            <?php if($len == 1) {?>
+                            First up liner commission: 10%
+                            <?php } else {?>
+                              First up liner commission: 5%
+                            <?php } ?>
+                          </li>
+                          <?php } ?>
+
+                          <?php if($len >= 2){ ?>
+                          <li class="list-group-item" id="secondUplinerCommission">Second up liner commission: 3%</li> 
+                          <?php } ?>
+
+                          <?php if($len >= 3){ ?>
+                          <li class="list-group-item" id="thirdUplinerCommission">Third up liner commission: 1.5%</li> 
+                          <?php } ?>
+
+                          <?php if($len >= 4){ ?>
+                          <li class="list-group-item" id="fourthUplinerCommission">Fourth up liner commission: 0.5%</li> 
+                          <?php } ?>
+
+                        <?php }?>
+                        <?php if(($cat == 'Category 4')) {
+                            
+                            ?>
+                          <li class="list-group-item" id="expectedAmount">Expected amount: 75%</li> 
+                          <li class="list-group-item" id="performanceFee">
+                            <?php if(($trader == null) && $len ==0) { ?>Performance fees: 25%
+                            <?php } elseif((($trader != null) && $len == 0)) { ?>Performance fees: 15%
+                            <?php } elseif(($trader != null) && $len == 1) {?>Performance fees: 5%
+                            <?php } elseif(($trader != null) && $len == 2) {?>Performance fees: 7%
+                            <?php } elseif(($trader != null) && $len == 3) {?>Performance fees: 5.5%
+                            <?php } elseif(($trader != null) && $len == 4) {?>Performance fees: 5%
+                            <?php } elseif(($trader == null) && $len == 1) {?>Performance fees: 15%
+                            <?php } elseif(($trader == null) && $len == 2) {?>Performance fees: 17%
+                            <?php } elseif(($trader == null) && $len == 3) {?>Performance fees: 15.5%
+                            <?php } else {?>Performance fees: 15%
+                            <?php } ?>
+                          </li> 
+                          <?php if($trader) {?>
+                          <li class="list-group-item" id="tradersCommission">Trader commission: 10%</li> 
+                          <?php } ?>
+                          <?php if($len >= 1){ ?>
+                          <li class="list-group-item" id="firstUplinerCommission">
+                            <?php if($len == 1) {?>
+                            First up liner commission: 10%
+                            <?php } else {?>
+                              First up liner commission: 5%
+                            <?php } ?>
+                          </li>
+                          <?php } ?>
+
+                          <?php if($len >= 2){ ?>
+                          <li class="list-group-item" id="secondUplinerCommission">Second up liner commission: 3%</li> 
+                          <?php } ?>
+
+                          <?php if($len >= 3){ ?>
+                          <li class="list-group-item" id="thirdUplinerCommission">Third up liner commission: 1.5%</li> 
+                          <?php } ?>
+
+                          <?php if($len >= 4){ ?>
+                          <li class="list-group-item" id="fourthUplinerCommission">Fourth up liner commission: 0.5%</li> 
+                          <?php } ?>
+
+                        <?php }?>
+                        <?php if(($cat == 'Category 5')) {
+                            
+                            ?>
+                          <li class="list-group-item" id="expectedAmount">Expected amount: 80%</li> 
+                          <li class="list-group-item" id="performanceFee">
+                            <?php if(($trader == null) && $len ==0) { ?>Performance fees: 20%
+                            <?php } elseif((($trader != null) && $len == 0)) { ?>Performance fees: 15%
+                            <?php } elseif(($trader != null) && $len == 1) {?>Performance fees: 13.5%
+                            <?php } elseif(($trader != null) && $len == 2) {?>Performance fees: 12%
+                            <?php } elseif(($trader != null) && $len == 3) {?>Performance fees: 11%
+                            <?php } elseif(($trader != null) && $len == 4) {?>Performance fees: 10%
+                            <?php } elseif(($trader == null) && $len == 1) {?>Performance fees: 18.5%
+                            <?php } elseif(($trader == null) && $len == 2) {?>Performance fees: 17%
+                            <?php } elseif(($trader == null) && $len == 3) {?>Performance fees: 16%
+                            <?php } else {?>Performance fees: 15%
+                            <?php } ?>
+                          </li> 
+                          <?php if($trader) {?>
+                          <li class="list-group-item" id="tradersCommission">Trader commission: 5%</li> 
+                          <?php } ?>
+                          <?php if($len >= 1){ ?>
+                          <li class="list-group-item" id="firstUplinerCommission">
+                            <?php if($len == 1) {?>
+                            First up liner commission: 5%
+                            <?php } else {?>
+                              First up liner commission: 1.5%
+                            <?php } ?>
+                          </li>
+                          <?php } ?>
+
+                          <?php if($len >= 2){ ?>
+                          <li class="list-group-item" id="secondUplinerCommission">Second up liner commission: 1.5%</li> 
+                          <?php } ?>
+
+                          <?php if($len >= 3){ ?>
+                          <li class="list-group-item" id="thirdUplinerCommission">Third up liner commission: 1%</li> 
+                          <?php } ?>
+
+                          <?php if($len >= 4){ ?>
+                          <li class="list-group-item" id="fourthUplinerCommission">Fourth up liner commission: 1%</li> 
+                          <?php } ?>
+
+                        <?php }?>
 
                       
                         </ul>
