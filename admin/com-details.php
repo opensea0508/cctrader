@@ -1,6 +1,7 @@
 <?php include 'head.php';
 $ref = bin2hex(random_bytes(11));
 $comPercent = 0;
+$amount = 0;
  ?>
 
   <body class="wide" >
@@ -57,6 +58,7 @@ $comPercent = 0;
                         $hemail = $wall['demail'];
                         $status = $wall['dstatus'];
                         $comPercent = $wall['dcommission'];
+                        $amount = $wall['damount'];
                     ?>
                     <tr>
                         <th>Date</th>
@@ -78,7 +80,7 @@ $comPercent = 0;
 
                     <tr>
                         <th>Amount</th>
-                        <td>$<?php echo number_format($wall['damount']); ?></td>
+                        <td id="commissionAmount">$<?php echo number_format($wall['damount']*$wall['dcommission']/100); ?></td>
                     </tr>
 
                     <tr>
@@ -89,7 +91,7 @@ $comPercent = 0;
                     <tr>
                         <th>Commission Percent (%)</th>
                         <td>
-                          <input id="comPercent" type="text" size="30" value="<?php echo ucfirst($wall['dcommission']); ?>" onchange="changeComPercent()"/>
+                          <input id="comPercent" name="comPercent" type="text" size="30" value="<?php echo ucfirst($wall['dcommission']); ?>" />
                         </td>                     
                     </tr>
 
@@ -130,12 +132,25 @@ $comPercent = 0;
         
       </div>
     </div>
+
+	  <script src="../user/assets/js/jquery-3.5.1.min.js"></script>
    
     <script>
-      function changeComPercent() {
-        var x = document.getElementById("comPercent").value;
-        <?php $comPercent = $_GET['x']; ?>
-      }
+      $(document).ready(function(){
+        
+        $(document).on("keyup", "#comPercent", function(){
+          <?php 
+            if(isset($_POST['comPercent'])) {
+              $comPercent = $_POST['comPercent'];
+            }
+          ?>
+          var commissionPercent = $('#comPercent').val();
+          var totalAmount = <?=$amount?>;
+          var commissionAmount = totalAmount * commissionPercent / 100;
+          $("#commissionAmount").html("$" + commissionAmount);
+          $("#paidComReq").attr("data-amount", commissionAmount);
+        })
+      })
     </script>
     <?php include 'script.php' ?> 
 

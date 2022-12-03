@@ -36,7 +36,7 @@ $ref = bin2hex(random_bytes(11));
               <div class="col-xl-9 xl-60">
                 <div class="card">
                     <div class="card-body">
-                      <p>Make a payment of <b>$<?php echo number_format($_SESSION['amount']) ?></b> to the wallet address below</p>
+                      <p>Make a payment of <b>$<?php echo number_format($_SESSION['amount']) ?></b> to the wallet address below. Supported Network TRC20</p>
                     <?php 
                         $sql = runQuery("SELECT * FROM dsetting WHERE id=1");
                         $row = fetchAssoc($sql);

@@ -55,11 +55,13 @@ $ref = bin2hex(random_bytes(11));
                     while($wall=fetchAssoc($wal)){
                         $huser = $wall['userid'];
                         $hemail = $wall['demail'];
+                        $dcommission = $wall['dcommission'];
+                        $ddcommission = $dcommission * $wall['damount'] /100;
                     ?>
                     <tr>
                     <td><?php echo $wall['ddate']; ?></td>
                     <td><?php echo selectFire("dregister","userid='$huser' AND demail='$hemail'", "dfname"); ?></td>
-                    <td><?php echo $wall['damount']; ?></td>
+                    <td><?php echo $ddcommission; ?></td>
                     <td><?php echo ucfirst($wall['dstatus']); ?></td>
                     <td>
                     <?php if($wall['dstatus']=="pending"){ ?>

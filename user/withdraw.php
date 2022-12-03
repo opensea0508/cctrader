@@ -77,6 +77,8 @@ $ref = bin2hex(random_bytes(11));
                             }
                           }
                           $len = count($upliner);
+                          $traderQuery = runQuery("SELECT trader FROM dregister WHERE id='$id'")->fetch_assoc();
+                          $trader = $traderQuery['trader'];
                         ?>
 
                         <ul class="list-group list-group-flush">
