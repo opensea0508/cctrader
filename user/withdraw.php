@@ -168,6 +168,7 @@ $ref = bin2hex(random_bytes(11));
                           <?php if($len >= 4){ ?>
                           <li class="list-group-item" id="fourthUplinerCommission">Fourth up liner commission: 0.5%</li> 
                           <?php } ?>
+                          <li class="list-group-item" id="managementFee">Management fees: 5%</li> 
 
                         <?php }?>
                         <?php if(($cat == 'Category 4')) {

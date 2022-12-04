@@ -44,7 +44,8 @@ $ref = bin2hex(random_bytes(11));
                 <thead>
                     <th>Date</th>
                     <th>Fullname</th>
-                    <th>Amount($)</th>
+                    <th>Withdraw Amount($)</th>
+                    <th>Expected Amount($)</th>
                     <th>Status</th>
                     <th>---</th>
                 </thead>
@@ -60,11 +61,29 @@ $ref = bin2hex(random_bytes(11));
                     <td><?php echo $wall['ddate']; ?></td>
                     <td><?php echo selectFire("dregister","userid='$huser' AND demail='$hemail'", "dfname"); ?></td>
                     <td><?php echo $wall['damount']; ?></td>
+                    <td>
+                      <?php 
+                      $category = runQuery("SELECT * FROM ddeposit WHERE userid='$huser' AND demail='$hemail' ORDER BY id DESC LIMIT 1")->fetch_assoc();
+                      $category = $category['dcategory'];
+                      if(($category == 'Category 1') && ($category == 'Category 2')) {
+                        $expectedAmount = $wall['damount'] * 0.65;
+                      } else if($category=='Category 3') {
+                        $expectedAmount = $wall['damount'] * 0.7;
+                      } else if($category=='Category 4') {
+                        $expectedAmount = $wall['damount'] * 0.75;
+                      } else if($category=='Category 5') {
+                        $expectedAmount = $wall['damount'] * 0.8;
+                      } else {
+                        $expectedAmount = $wall['damount'] * 0.8;
+                      }
+                      echo $expectedAmount; 
+                      ?>
+                    </td>
                     <td><?php echo ucfirst($wall['dstatus']); ?></td>
                     <td>
                     <?php if($wall['dstatus']=="pending"){ ?>
 
-                        <a href="with-details?tid=<?php echo $wall['tid']; ?>" class="btn btn-xs btn-info">Details</a>
+                        <a href="with-details?tid=<?php echo $wall['tid']; ?>&expectedAmount=<?php echo $expectedAmount; ?>&category=<?php echo $category; ?>" class="btn btn-xs btn-info">Details</a>
 
                         <?php } ?>
 

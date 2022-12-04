@@ -330,6 +330,19 @@ function getTotalProfit($userId, $email, $value)
   return $result;
 }
 
+function getGoldAssets($userId, $email, $value)
+{
+  $data = runQuery("SELECT SUM($value) as goldAssets FROM ddeposit WHERE userid='$userId' AND demail='$email' AND dcategory='Category 6' AND dstatus='confirmed'");
+  if (numRows($data) > 0) {
+    $datas = fetchAssoc($data);
+    $result = $datas['goldAssets'];
+    $result = $result/100;
+  } else {
+    $result = 0;
+  }
+  return $result;
+}
+
 // Transform hours like "1:45" into the total number of minutes, "105". 
 function hoursToMinutes($hours)
 {

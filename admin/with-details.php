@@ -49,6 +49,8 @@ $ref = bin2hex(random_bytes(11));
                 <tbody>
                     <?php
                     $tid = clean($_GET['tid']);
+                    $expectedAmount = clean($_GET['expectedAmount']);
+                    $category = clean($_GET['category']);
                     $wal = runQuery("SELECT * FROM dhistory WHERE dtype='withdraw' AND tid='$tid'");
                     if(numRows($wal)>0){
                     $wall=fetchAssoc($wal);
@@ -75,8 +77,18 @@ $ref = bin2hex(random_bytes(11));
                     </tr>
 
                     <tr>
-                        <th>Amount</th>
+                        <th>Category</th>
+                        <td><?php echo $category; ?></td>
+                    </tr>
+
+                    <tr>
+                        <th>Withdraw Amount</th>
                         <td>$<?php echo number_format($wall['damount']); ?></td>
+                    </tr>
+
+                    <tr>
+                        <th>Expected Amount</th>
+                        <td>$<?php echo $expectedAmount; ?></td>
                     </tr>
 
                     <tr>
