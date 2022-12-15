@@ -376,6 +376,38 @@ $ref = bin2hex(random_bytes(11));
       } else {
         $("#fourthUplinerCommission").remove();
       }
+      if($("#expectedAmount").length) {
+        var expectedAmountContent = $("#expectedAmount").text();
+        var expectedPercent = expectedAmountContent.substring(expectedAmountContent.lastIndexOf(" ")+1, expectedAmountContent.lastIndexOf("%"));
+      }
+      if($("#performanceFee").length) {
+        var performanceFeeContent = $("#performanceFee").text();
+        var performanceFeePercent = performanceFeeContent.substring(performanceFeeContent.lastIndexOf(": ")+1, performanceFeeContent.lastIndexOf("%"));
+      }
+      if($("#tradersCommission").length) {
+        var tradersCommissionContent = $("#tradersCommission").text();
+        var tradersCommissionPercent = tradersCommissionContent.substring(tradersCommissionContent.lastIndexOf(": ")+1, tradersCommissionContent.lastIndexOf("%"));
+      }
+      if($("#firstUplinerCommission").length) {
+        var firstUplinerCommissionContent = $("#firstUplinerCommission").text();
+        var firstUplinerCommissionPercent = firstUplinerCommissionContent.substring(firstUplinerCommissionContent.lastIndexOf(": ")+1, firstUplinerCommissionContent.lastIndexOf("%"));
+      }
+      if($("#secondUplinerCommission").length) {
+        var secondUplinerCommissionContent = $("#secondUplinerCommission").text();
+        var secondUplinerCommissionPercent = secondUplinerCommissionContent.substring(secondUplinerCommissionContent.lastIndexOf(": ")+1, secondUplinerCommissionContent.lastIndexOf("%"));
+      }
+      if($("#thirdUplinerCommission").length) {
+        var thirdUplinerCommissionContent = $("#thirdUplinerCommission").text();
+        var thirdUplinerCommissionPercent = thirdUplinerCommissionContent.substring(thirdUplinerCommissionContent.lastIndexOf(": ")+1, thirdUplinerCommissionContent.lastIndexOf("%"));
+      }
+      if($("#fourthUplinerCommission").length) {
+        var fourthUplinerCommissionContent = $("#fourthUplinerCommission").text();
+        var fourthUplinerCommissionPercent = fourthUplinerCommissionContent.substring(fourthUplinerCommissionContent.lastIndexOf(": ")+1, fourthUplinerCommissionContent.lastIndexOf("%"));
+      }
+      if($("#managementFee").length) {
+        var managementFeeContent = $("#managementFee").text();
+        var managementFeePercent = managementFeeContent.substring(managementFeeContent.lastIndexOf(": ")+1, managementFeeContent.lastIndexOf("%"));
+      }
     $(document).on("keyup", "#amountX", function(){
       var amount = Number($("#amountX").val());
       var balance = Number($(this).attr('data-wallet'));
@@ -392,31 +424,37 @@ $ref = bin2hex(random_bytes(11));
         $("#btnReq").prop("disabled", true);
         $("#errE").html("Minimum request for withdrawal is $"+minWith)
       }
-      var len = <?php echo $len ?>;
-      $("#withdrawalAmount").html("Withdrawal amount $" + amount);
-      $("#expectedAmount").html("Expected amount $" + (amount*0.68));
-      $("#performanceFee").html("Performance fees $" + (amount*0.1));
-      $("#managementFee").html("Management fees $" + (amount*0.02));
-      if(len == 0) {
-        $("#tradersCommission").html("Traders commission $" + (amount*0.2));
-      } else if(len == 1) {
-        $("#tradersCommission").html("Traders commission $" + (amount*0.1));
-        $("#firstUplinerCommission").html("First up liner commission $" + (amount*0.1));
-      } else if(len == 2) {
-        $("#tradersCommission").html("Traders commission $" + (amount*0.1));
-        $("#firstUplinerCommission").html("First up liner commission $" + (amount*0.05));
-        $("#secondUplinerCommission").html("Second up liner commission $" + (amount*0.05));
-      } else if(len == 3) {
-        $("#tradersCommission").html("Traders commission $" + (amount*0.1));
-        $("#firstUplinerCommission").html("First up liner commission $" + (amount*0.05));
-        $("#secondUplinerCommission").html("Second up liner commission $" + (amount*0.03));
-        $("#thirdUplinerCommission").html("Third up liner commission $" + (amount*0.2));
-      } else {
-        $("#tradersCommission").html("Traders commission $" + (amount*0.1));
-        $("#firstUplinerCommission").html("First up liner commission $" + (amount*0.05));
-        $("#secondUplinerCommission").html("Second up liner commission $" + (amount*0.03));
-        $("#thirdUplinerCommission").html("Third up liner commission $" + (amount*0.015));
-        $("#fourthUplinerCommission").html("Fourth up liner commission $" + (amount*0.005));
+      if($("#expectedAmount").length) {
+        var expectedAmount = amount * expectedPercent / 100;
+        $("#expectedAmount").html("Expected amount: $" + expectedAmount);
+      }
+      if($("#performanceFee").length) {
+        var performanceFee = amount * performanceFeePercent / 100;
+        $("#performanceFee").html("Performance fees: $" + performanceFee);
+      }
+      if($("#tradersCommission").length) {
+        var tradersCommission = amount * tradersCommissionPercent / 100;
+        $("#tradersCommission").html("Traders commission: $" + tradersCommission);
+      }
+      if($("#firstUplinerCommission").length) {
+        var firstUplinerCommission = amount * firstUplinerCommissionPercent / 100;
+        $("#firstUplinerCommission").html("First up liner commission: $" + firstUplinerCommission);
+      }
+      if($("#secondUplinerCommission").length) {
+        var secondUplinerCommission = amount * secondUplinerCommissionPercent / 100;
+        $("#secondUplinerCommission").html("Second up liner commission: $" + secondUplinerCommission);
+      }
+      if($("#thirdUplinerCommission").length) {
+        var thirdUplinerCommission = amount * thirdUplinerCommissionPercent / 100;
+        $("#thirdUplinerCommission").html("Third up liner commission: $" + thirdUplinerCommission);
+      }
+      if($("#fourthUplinerCommission").length) {
+        var fourthUplinerCommission = amount * fourthUplinerCommissionPercent / 100;
+        $("#fourthUplinerCommission").html("Fourth up liner commission: $" + fourthUplinerCommission);
+      }
+      if($("#managementFee").length) {
+        var managementFee = amount * managementFeePercent / 100;
+        $("#managementFee").html("Management fees: $" + managementFee);
       }
     })
   })

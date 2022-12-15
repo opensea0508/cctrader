@@ -132,8 +132,17 @@ $ref = bin2hex(random_bytes(11));
                       <ul class="list">
                         <li><b>Number of Trades:</b> <?php echo getTrades($user, $email) ?></li>
                         <li><b>Total Profit:</b> <?php echo getTotalProfit($user, $email, 'dprofit') ?></li>
-                        <li><b>Profit Ratio:</b> <?php echo  number_format(getTotalProfit($user, $email, 'dprofit') * 100 / getAmount($user, $email, 'damount'), 2) ?>%</li>
-                        <li><b>Total gold assets Holding:</b> <?php echo getGoldAssets($user, $email, 'damount') ?></li>
+                        <li><b>Profit Ratio:</b> 
+                        <?php
+                        $totalDepositAmount = getAmount($user, $email, 'damount');
+                        if($totalDepositAmount == 0) {
+                          echo 0;
+                        } else {
+                          echo  number_format(getTotalProfit($user, $email, 'dprofit') * 100 / getAmount($user, $email, 'damount'), 2) ;
+                        } 
+                        ?>%
+                        </li>
+                        <li><b>Total gold assets Holding:</b> <?php echo getGoldAssets($user, $email, 'damount') ?>g</li>
                         <li><b>Commission:</b>$<?php echo getCommission($user, $email, 'damount') ?></li>
                       </ul>
                     </div>

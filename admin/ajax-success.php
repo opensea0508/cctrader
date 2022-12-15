@@ -36,25 +36,28 @@ if (isset($_POST['Message']) and $_POST['Message'] == 'paidDepo') {
   $id = clean($_POST['id']['id']);
   $amount = clean($_POST['id']['amount']);
 
-  $balance = (int)userInfo($userid, $email, 'dwallet') + (int)$amount;
-  updateFire('dregister', "dwallet='$balance'", "userid='$userid' AND demail='$email'");
+  $wall = runQuery("SELECT dcategory FROM ddeposit WHERE userid='$userid' AND demail='$email' AND did='$id'")->fetch_assoc();
+  if($wall['dcategory'] != 'Category 6') {
+    $balance = (int)userInfo($userid, $email, 'dwallet') + (int)$amount;
+    updateFire('dregister', "dwallet='$balance'", "userid='$userid' AND demail='$email'");
+  }
   updateFire('ddeposit', "dstatus='confirmed'", "userid='$userid' AND demail='$email' AND did='$id'");
   updateFire("dhistory", "dstatus='paid'", "tid='$id'");
 
-  $ref = userInfo($userid, "$email", "dreferral");
-  $name = userInfo($userid, "$email", "dfname");
-  if (!empty($ref)) {
-    //get user wallet
-    $wall = runQuery("SELECT dwallet, demail, userid FROM dregister WHERE drefCode='$ref'")->fetch_assoc();
-    //get the amount with 10% deposit
-    $per = (int)$amount * 0.1;
-    $rfinal = (float)$wall['dwallet'] + $per;
-    runQuery("UPDATE dregister SET dwallet='$rfinal' WHERE drefCode='$ref'");
-    $userid = $wall['userid'];
-    $email = $wall['demail'];
+  // $ref = userInfo($userid, "$email", "dreferral");
+  // $name = userInfo($userid, "$email", "dfname");
+  // if (!empty($ref)) {
+  //   //get user wallet
+  //   $wall = runQuery("SELECT dwallet, demail, userid FROM dregister WHERE drefCode='$ref'")->fetch_assoc();
+  //   //get the amount with 10% deposit
+  //   $per = (int)$amount * 0.1;
+  //   $rfinal = (float)$wall['dwallet'] + $per;
+  //   runQuery("UPDATE dregister SET dwallet='$rfinal' WHERE drefCode='$ref'");
+  //   $userid = $wall['userid'];
+  //   $email = $wall['demail'];
 
-    runQuery("INSERT INTO dhistory SET userid='$userid', tid='$code', dname='Referral bonus by $name', damount='$per', dcredit='$per', dwallet_balance='$rfinal', ddate='$date', dtype='deposit', demail='$email'");
-  }
+  //   runQuery("INSERT INTO dhistory SET userid='$userid', tid='$code', dname='Referral bonus by $name', damount='$per', dcredit='$per', dwallet_balance='$rfinal', ddate='$date', dtype='deposit', demail='$email'");
+  // }
 }
 
 
