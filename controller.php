@@ -44,7 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <p>Your registration was successful, kindly login to your email and verify your account.</p>
                     </div>
                     ';
-          header("Location: register");
+          $_SESSION['email'] = $email;
+          $_SESSION['userId'] = $code;
+          header("Location: kyc");
         } else {
           //error message here...
           $_SESSION['msg'] = '
@@ -77,6 +79,43 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
   }
 
+  //KYC
+  if (isset($_POST['saveKyc'])) {
+
+    $occupation = clean($_POST['occupation']);
+    $annual = clean($_POST['annual']);
+    $monthly = clean($_POST['monthly']);
+    $funds = clean($_POST['funds']);
+    $employment = clean($_POST['employment']);
+    $exp = clean($_POST['exp']);
+    $specify = clean($_POST['specify']);
+    $goal = clean($_POST['goal']);
+    $qty = clean($_POST['qty']);
+    $app = clean($_POST['app']);
+    $leverage = clean($_POST['leverage']);
+    $position = clean($_POST['position']);
+    $risk = clean($_POST['risk']);
+    $exec = clean($_POST['exec']);
+    $amtDepo = clean($_POST['amtDepo']);
+    $userId = $_SESSION['userId'];
+    $email = $_SESSION['email'];
+    $sql = runQuery("INSERT INTO dkyc SET userid='$userId', demail='$email', doccupation='$occupation', dannual='$annual', dmonthly='$monthly', dfunds='$funds', demployment='$employment', dexperience='$exp', dspecify='$specify', dgoal='$goal', dqty='$qty', dapp='$app', dleverage='$leverage', dposition='$position', drisk='$risk', dexec='$exec', damtDepo='$amtDepo', ddate='$date' ");
+
+    if ($sql) {
+      $_SESSION['msg'] = '<div class="alert alert-success" role="alert">
+                  <strong>Success!</strong> <br>
+                  Submitted successfully! admin will contact you shortly.
+              </div>';
+              header("Location: login");
+    } else {
+      $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
+                  <strong>Fail!</strong> <br>
+                  Oops! unable to submit your kyc, try again later!
+              </div>';
+              header("Location: kyc");
+    }
+
+  }
 
   //Login User
   if (isset($_POST['saveLog'])) {

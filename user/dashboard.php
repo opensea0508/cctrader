@@ -99,7 +99,7 @@ $ref = bin2hex(random_bytes(11));
                         <li><b>Country:</b> <?php echo userInfo($user, $email, 'dcountry') ?></li>
                         <li><b>State:</b> <?php echo userInfo($user, $email, 'dstate') ?></li>
                         <li><b>City:</b> <?php echo userInfo($user, $email, 'dcity') ?></li>
-                        <li><b>Varification:</b> <?php echo ucfirst(userInfo($user, $email, 'dvastatus')) ?></li>
+                        <li><b>Verification:</b> <?php echo ucfirst(userInfo($user, $email, 'dvastatus')) ?></li>
                         <li><b>Is Trader:</b> <?php if(userInfo($user, $email, 'isTrader')==true){ ?>Yes<?php } else { ?>Not Yet<?php }?></li>
                         <hr>
                         <b>Bank Details</b>
