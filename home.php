@@ -14,7 +14,7 @@
               <div class="uk-grid" data-uk-grid>
                 <div class="uk-width-1-2@m">
                   <div class="uk-overlay">
-                    <h1>Experience the <span class="in-highlight"> power</span> of institutional Trading</h1>
+                    <h1>Discover the impact of financial technology on institutional trading</h1>
                     <p class="uk-text-lead uk-visible@m">Become an Institutional investor with just $200.</p>
                     <div class="in-slideshow-button">
                       <?php if (isset($_SESSION['web'])) { ?>
@@ -60,7 +60,8 @@
               <div class="uk-grid" data-uk-grid>
                 <div class="uk-width-1-2@m">
                   <div class="uk-overlay">
-                    <h1>Get more <span class="in-highlight">freedom</span> in the markets.</h1>
+                    <h1>Experience innovation in a new light. Connecting to the worldwide oil and gas business, commodities, precious metals, and others</h1>
+                    <!-- <h1>Get more <span class="in-highlight">freedom</span> in the markets.</h1> -->
                     <p class="uk-text-lead uk-visible@m">Trade Cryptocurrencies, Stock Indices, Commodities and Forex from a single account</p>
                     <div class="in-slideshow-button">
                       <?php if (isset($_SESSION['web'])) { ?>
@@ -73,7 +74,7 @@
                   </div>
                 </div>
                 <div class="uk-position-center">
-                  <img class="uk-animation-slide-top-small" src="img/in-lazy.svg" data-src="img/in-slideshow-image-1.png" alt="slideshow-image" width="862" height="540" data-uk-img>
+                  <img class="uk-animation-slide-top-small" src="img/in-lazy.svg" data-src="img/in-slideshow-image-3.png" alt="slideshow-image" width="862" height="540" data-uk-img>
                 </div>
               </div>
             </div>
@@ -84,7 +85,7 @@
               <div class="uk-grid" data-uk-grid>
                 <div class="uk-width-1-2@m">
                   <div class="uk-overlay">
-                    <h1>Let the Top <span class="in-highlight">trading</span> firms do the job through the power of Institutional Trading.</h1>
+                    <h1>$5,000,000 profit target for 2023. Let’s build a stronger 2023</h1>
                     <p class="uk-text-lead uk-visible@m">Covesting allows you to automatically copy top performing traders and achieve the returns</p>
                     <div class="in-slideshow-button">
                       <?php if (isset($_SESSION['web'])) { ?>

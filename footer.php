@@ -20,9 +20,11 @@
                 </div>
                 <div class="uk-width-1-4@l uk-width-1-5@m uk-width-1-3@s">
                     <ul class="uk-list">
+                        <li><a href="aml">Anti-money laundry</a></li>
                         <li><a href="career">Career</a></li>
                         <!-- <li><a href="https://www.ccitraders.com/POA Ava-converted.pdf">Agreement</a></li> -->
                         <li><a href="https://www.ccitraders.com/Risk Disclosure.pdf">Risk Disclosure</a></li>
+                        <li><a href="lpoa">Limited Power of Attorney</a></li>
                     </ul>
                 </div>
                 <div class="uk-width-1-4@l uk-width-2-5@m uk-width-1-1@s">
