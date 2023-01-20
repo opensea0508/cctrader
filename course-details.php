@@ -32,7 +32,7 @@
 								<h2 class="uk-margin-remove"><?php echo $row['dtitle'] ?>.</h2>
 								<hr>
 								<img src="./admin/files/<?php echo $row['dimg'] ?>.png" alt="">
-								<h4>&#8358; <?php echo number_format($row['damount']) ?></h4>
+								<h4>$ <?php echo number_format($row['damount']) ?></h4>
 								<p><?php echo $row['ddesc'] ?></p>
 								<hr>
 

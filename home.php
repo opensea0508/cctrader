@@ -87,7 +87,7 @@
                 <div class="uk-width-1-2@m">
                   <div class="uk-overlay">
                     <h1>$5,000,000 profit target for 2023. Let’s build a stronger 2023</h1>
-                    <p class="uk-text-lead uk-visible@m">Covesting allows you to automatically copy top performing traders and achieve the returns</p>
+                    <!-- <p class="uk-text-lead uk-visible@m">Covesting allows you to automatically copy top performing traders and achieve the returns</p> -->
                     <div class="in-slideshow-button">
                       <?php if (isset($_SESSION['web'])) { ?>
                         <a href="user/dashboard" class="uk-button uk-button-primary uk-border-rounded">My Dashboard</a>
@@ -179,7 +179,7 @@
         <div class="uk-grid-divider" data-uk-grid>
           <div class="uk-width-expand@m in-margin-top-20@s">
             <h2>Why CCI is a Trusted trading Firm</h2>
-            <p>With our extensive knowledge of the worldwide market and other instruments like as oil and gas, commodities, precious metals, Algro commodities, CFDs, indices, and others, we provide prospective clients with a competitive advantage that they will not find elsewhere.</p>
+            <p>With our extensive knowledge of the worldwide market and other instruments like oil and gas, commodities, precious metals, Algro commodities, CFDs, indices, and others, we provide prospective clients with a competitive advantage that they will not find elsewhere.</p>
           </div>
           <div class="uk-width-2-3@m">
             <div class="uk-child-width-1-2@s uk-child-width-1-2@m" data-uk-grid>
@@ -229,7 +229,7 @@ $5,000,000 is planned for this year 2023.</p>
         <div class="uk-grid uk-flex uk-flex-center">
           <div class="uk-width-1-2@m uk-text-center">
             <h2>Experience more than Trading.</h2>
-            <p class="uk-text-lead">We are a private institutional trading firm, Registered in St. Vincent under the Financial Services Authority. We are not a financial institution and do not offer a retail trading firm. </p>
+            <p class="uk-text-lead">We are a private institutional trading firm, Registered in St. Vincent under the Financial Services Authority. We are not a financial institution and do not offer a retail trading. </p>
           </div>
           <div class="uk-width-5-6@m">
             <div class="uk-child-width-1-2@s uk-child-width-1-2@m uk-margin-medium-top" data-uk-grid>

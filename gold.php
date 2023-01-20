@@ -18,8 +18,18 @@
     <!-- breadcrumb content end -->
     <main>
         <!-- section content begin -->
-        <section class="uk-margin-large-bottom">
+        <style>
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+                border-radius: 8px;
+            }
+        </style>
+        <section class="uk-section uk-margin-large-bottom">
             <div class="uk-container uk-background-default">
+                <img src="img/gold.jpg" alt="gold">
                 <div class="uk-grid uk-margin-medium-top">
                     <div class="uk-width-2-3@l uk-width-1-1@s uk-align-center">
                         <h2 class="uk-margin-small-top uk-margin-remove-bottom">Connecting you to the Global regulated Spot Market through Hybrid innovative technology.  

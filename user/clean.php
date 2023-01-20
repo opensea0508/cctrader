@@ -387,8 +387,8 @@ function hoursToMins($hours)
 function replace($data)
 {
   $data = str_replace(',', '', $data);
-  $data = str_replace('₦ ', '', $data);
-  $data = str_replace('&#8358; ', '', $data);
+  $data = str_replace('$', '', $data);
+  $data = str_replace('$ ', '', $data);
   return $data;
 }
 

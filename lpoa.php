@@ -19,11 +19,13 @@
     <!-- breadcrumb content end -->
     <main>
         <!-- section content begin -->
+        <br/>
+        <br/>
         <section id="pagetitle-container uk-background-muted mt-40">
             <div class="uk-container">
                 <div class="uk-grid">
                     <div class="uk-width-1-1">
-                        <h2 class="uk-margin-small-top uk-margin-remove-bottom">LIMITED POWER OF ATTORNEY</h2>
+                        <h3 class="uk-margin-small-top uk-margin-remove-bottom">LIMITED POWER OF ATTORNEY</h3>
                     </div>
                 </div>
             </div>
@@ -35,7 +37,9 @@
                     <div class="uk-grid">
                         <div class="uk-width-1-1">
                             <div class="border-top-gray">
-                                <h3 class="uk-margin-small-top uk-margin-remove-bottom">WHEREAS</h3>
+                                <br/>
+                                <h4 class="uk-margin-small-top uk-margin-remove-bottom">WHEREAS</h4>
+                                <br/>
                                 <ol type="A">
                                     <li>The account holder (the “client”) has established a trading profile with us (the “Account” and “the company” respectively).</li>
                                     <li>The establishment and operation by the client (You) with Us are subject to terms and conditions which have been accepted and acknowledged separately by You (the Client) (the “Terms and Conditions, the risk disclosure document, the anti-money laundry terms, the privacy policy terms’’).</li>
@@ -82,7 +86,7 @@
             <div class="uk-container">
                 <div class="uk-grid">
                     <div class="uk-width-1-1">
-                        <h2 class="uk-margin-small-top uk-margin-remove-bottom">Schedule of Fees</h2>
+                        <h3 class="uk-margin-small-top uk-margin-remove-bottom">Schedule of Fees</h3>
                     </div>
                 </div>
             </div>
@@ -94,6 +98,7 @@
                     <div class="uk-grid">
                         <div class="uk-width-1-1">
                             <div class="border-top-gray">
+                                <br/>
                                 <p>
                                     This schedule sets forth the agreed basis under which the client shall recompense the Trading Agent. The client and Trading Agent agree that upon receipt of this POA and schedule, The trading Agent and the Broker are authorized to make the deductions set out below from the Trading Account. The Broker will not be liable in any way for any actions taken or failed to be taken by the Trading Agent, or for any losses, costs, or expenses incurred by the client or any other third party because of the Trading Agent’s actions. The Trading Agent is not an employee or agent of the Broker, and the Broker does not vouch or endorse the services provided by the Trading Agent.
                                 </p>
@@ -109,7 +114,7 @@
             <div class="uk-container">
                 <div class="uk-grid">
                     <div class="uk-width-1-1">
-                        <h2 class="uk-margin-small-top uk-margin-remove-bottom">Profit-Sharing:</h2>
+                        <h3 class="uk-margin-small-top uk-margin-remove-bottom">Profit-Sharing:</h3>
                     </div>
                 </div>
             </div>
@@ -121,6 +126,7 @@
                     <div class="uk-grid">
                         <div class="uk-width-1-1">
                             <div class="border-top-gray">
+                                <br/>
                                 <p>
                                     The undersigned client hereby authorizes the Broker to deduct the Trading Account(s) and pay the Trading Agent the following fees: (Mark as appropriate) For the purpose of this schedule, Period shall mean the period from the opening of business of the first day of each month until the close of business of the last day of each month, or at the end of every close trade, either daily, weekly, or Monthly. The amount calculated shall be debited from the Trader’s account(s) during the next Period. The % of the amount generated from one Period to the next, based upon the net equity positions at the end of each Period minus the highest net equity position reached since the opening of the account, excluding day to day administrative adjustments to the Trading Account, deposits, withdrawals, rollover, and premiums. Should this amount be negative, no amount is due to the Trading agent. If the trading agent trades for a minimum of three months on profitable transactions without the client initiating any withdrawals, you (the client) authorise the broker or the trading agent (the company) to deduct or debit your trading account to pay the trading agent's (the company's) trading commission and charges.
                                 </p>
