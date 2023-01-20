@@ -98,6 +98,7 @@
                                     This schedule sets forth the agreed basis under which the client shall recompense the Trading Agent. The client and Trading Agent agree that upon receipt of this POA and schedule, The trading Agent and the Broker are authorized to make the deductions set out below from the Trading Account. The Broker will not be liable in any way for any actions taken or failed to be taken by the Trading Agent, or for any losses, costs, or expenses incurred by the client or any other third party because of the Trading Agent’s actions. The Trading Agent is not an employee or agent of the Broker, and the Broker does not vouch or endorse the services provided by the Trading Agent.
                                 </p>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -133,6 +134,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
     <?php include 'footer.php' ?>

@@ -323,7 +323,7 @@
             <div class="uk-container uk-margin-small-bottom">
                 <div class="uk-grid-large" data-uk-grid>
                     <div class="uk-width-1-2@m">
-                        <h2>We are committed to meeting your CFD and FX trading needs</h2>
+                        <h2>We are committed to meeting your trading needs through innovative technology.</h2>
                         <p class="uk-text-lead">Excepteur occaeca cupidata non proident fugiat nulla pariatur quasi architecto beatae, sunt in culpa quila officia deserunt mollit anim id est aute laborum.</p>
                     </div>
                     <div class="uk-width-1-1">

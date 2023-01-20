@@ -180,6 +180,8 @@
           <div class="uk-width-expand@m in-margin-top-20@s">
             <h2>Why CCI is a Trusted trading Firm</h2>
             <p>With our extensive knowledge of the worldwide market and other instruments like as oil and gas, commodities, precious metals, Algro commodities, CFDs, indices, and others, we provide prospective clients with a competitive advantage that they will not find elsewhere.</p>
+            <h2>Why CCI is a Trusted trading Firm</h2>
+            <p>With our extensive knowledge of the worldwide market and other instruments like as oil and gas, commodities, precious metals, Algro commodities, CFDs, indices, and others, we provide prospective clients with a competitive advantage that they will not find elsewhere.</p>
           </div>
           <div class="uk-width-2-3@m">
             <div class="uk-child-width-1-2@s uk-child-width-1-2@m" data-uk-grid>
@@ -246,6 +248,7 @@
           <div class="uk-width-5-6@m">
             <div class="uk-child-width-1-2@s uk-child-width-1-2@m uk-margin-medium-top" data-uk-grid>
               <!-- <div>
+              <!-- <div>
                 <div class="in-pricing-1">
                   <div class="uk-card uk-card-default uk-box-shadow-medium">
                     <div class="uk-card-media-top">
@@ -297,6 +300,7 @@
                     </div>
                   </div>
                 </div>
+              </div> -->
               </div> -->
               <div class="uk-width-1-1">
                 <div class="uk-card uk-card-default uk-card-body in-profit-appcard">
@@ -353,7 +357,7 @@
       <div class="uk-container uk-margin-small-bottom">
         <div class="uk-grid-large" data-uk-grid>
           <div class="uk-width-1-2@m">
-            <h2>We are committed to meeting your trading needs through innovative technology. </h2>
+            <h2>We are committed to meeting your CFD and FX trading needs</h2>
             <!-- <p class="uk-text-lead">Excepteur occaeca cupidata non proident fugiat nulla pariatur quasi architecto beatae, sunt in culpa quila officia deserunt mollit anim id est aute laborum.</p> -->
           </div>
         </div>
@@ -460,4 +464,5 @@
   <?php include 'script.php' ?>
 </body>
 
+</html>
 </html>
