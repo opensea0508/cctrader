@@ -240,7 +240,7 @@ $ref = bin2hex(random_bytes(11));
   ?>
     <?php if (userInfo($user, $email, 'dkyc') == 'no') { ?>
 
-      <script>
+      <!-- <script>
         $(document).ready(function() {
           $('#myModal').modal('show')
 
@@ -253,10 +253,10 @@ $ref = bin2hex(random_bytes(11));
             $("#rest").html('')
           })
         })
-      </script>
+      </script> -->
 
 
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -429,7 +429,7 @@ $ref = bin2hex(random_bytes(11));
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
   <?php }
   } ?>

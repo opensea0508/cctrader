@@ -58,6 +58,7 @@
                         <li class="<?php basePage('company') ?>"><a href="company">Company</a></li>
                         <li class="<?php basePage('about') ?>"><a href="about">About Us</a></li>
                         <li class="<?php basePage('education') ?>"><a href="education">Education</a></li>
+                        <li class="<?php basePage('gold') ?>"><a href="gold">Gold</a></li>
                         <li class="<?php basePage('contact') ?>"><a href="contact">Contact Us</a></li>
 
 

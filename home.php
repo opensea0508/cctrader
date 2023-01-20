@@ -60,9 +60,10 @@
               <div class="uk-grid" data-uk-grid>
                 <div class="uk-width-1-2@m">
                   <div class="uk-overlay">
-                    <h1>Experience innovation in a new light. Connecting to the worldwide oil and gas business, commodities, precious metals, and others</h1>
+                    <h1>Experience innovation in a new light</h1>
                     <!-- <h1>Get more <span class="in-highlight">freedom</span> in the markets.</h1> -->
-                    <p class="uk-text-lead uk-visible@m">Trade Cryptocurrencies, Stock Indices, Commodities and Forex from a single account</p>
+                    <p class="uk-text-lead uk-visible@m">Connecting to the worldwide oil and gas business, commodities, precious metals, and others</p>
+                    <!-- <p class="uk-text-lead uk-visible@m">Trade Cryptocurrencies, Stock Indices, Commodities and Forex from a single account</p> -->
                     <div class="in-slideshow-button">
                       <?php if (isset($_SESSION['web'])) { ?>
                         <a href="user/dashboard" class="uk-button uk-button-primary uk-border-rounded">My Dashboard</a>
@@ -99,6 +100,29 @@
                 </div>
                 <div class="uk-position-center">
                   <img class="uk-animation-slide-top-small" src="img/in-lazy.svg" data-src="img/in-slideshow-image-2.png" alt="slideshow-image" width="862" height="540" data-uk-img>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="uk-container">
+              <div class="uk-grid" data-uk-grid>
+                <div class="uk-width-1-2@m">
+                  <div class="uk-overlay">
+                    <h1>Trade real gold coins, have them delivered</h1>
+                    <p class="uk-text-lead uk-visible@m">Fintech innovation has brought the entire market to your doorstep</p>
+                    <div class="in-slideshow-button">
+                      <?php if (isset($_SESSION['web'])) { ?>
+                        <a href="user/dashboard" class="uk-button uk-button-primary uk-border-rounded">My Dashboard</a>
+                      <?php } else { ?>
+                        <a href="register" class="uk-button uk-button-primary uk-border-rounded">Register Now</a>
+                      <?php } ?>
+                    </div>
+                    <!-- <p class="uk-text-small"><span class="uk-text-primary">*</span>Trading since 2008. Best execution</p> -->
+                  </div>
+                </div>
+                <div class="uk-position-center">
+                  <img class="uk-animation-slide-top-small" src="img/in-lazy.svg" data-src="img/in-slideshow-image-4.png" alt="slideshow-image" width="862" height="540" data-uk-img>
                 </div>
               </div>
             </div>
@@ -154,8 +178,8 @@
       <div class="uk-container">
         <div class="uk-grid-divider" data-uk-grid>
           <div class="uk-width-expand@m in-margin-top-20@s">
-            <h2>Why CCI Traders is a trusted FX broker</h2>
-            <p>With our in-depth global market and other instruments such as oil Futures and cFD, Fx and Indices, cryptos, and others, we give prospective traders and investors an advantage they won't find anywhere else.</p>
+            <h2>Why CCI is a Trusted trading Firm</h2>
+            <p>With our extensive knowledge of the worldwide market and other instruments like as oil and gas, commodities, precious metals, Algro commodities, CFDs, indices, and others, we provide prospective clients with a competitive advantage that they will not find elsewhere.</p>
           </div>
           <div class="uk-width-2-3@m">
             <div class="uk-child-width-1-2@s uk-child-width-1-2@m" data-uk-grid>
@@ -167,28 +191,42 @@
                   <p class="uk-text-bold">Wide Range of Trading Instruments</p>
                 </div>
               </div>
+                <style>
+                .ellipse{
+                    background-color: #00BFFF;
+                    height: 150px;
+                    width: 250px;
+                    border-radius: 50%;
+                    text-align: center;
+                }
+                </style>
               <div class="uk-flex uk-flex-middle">
-                <div class="uk-margin-right">
-                  <img src="img/in-lazy.svg" data-src="img/in-profit-icon-2.svg" alt="profit-icon" width="72" height="72" data-uk-img>
-                </div>
-                <div>
-                  <p class="uk-text-bold">Unparalleled Trading Conditions</p>
+                <div class="ellipse">
+                  <p>
+                  <br/>
+                    Over 500k <br/>
+                    Successful <br/>
+                    Executions.
+                  </p>
                 </div>
               </div>
               <div class="uk-flex uk-flex-middle">
-                <div class="uk-margin-right">
-                  <img src="img/in-lazy.svg" data-src="img/in-profit-icon-3.svg" alt="profit-icon" width="72" height="72" data-uk-img>
-                </div>
-                <div>
-                  <p class="uk-text-bold">Globally Licensed &amp; Regulated</p>
+                <div class="ellipse">
+                <p>
+                  Over $2,000,000 profit <br/>
+                  in 2022. <br/><br/>
+                    Successful <br/>
+                    Executions.
+                  </p>
                 </div>
               </div>
               <div class="uk-flex uk-flex-middle">
-                <div class="uk-margin-right">
-                  <img src="img/in-lazy.svg" data-src="img/in-profit-icon-4.svg" alt="profit-icon" width="72" height="72" data-uk-img>
-                </div>
-                <div>
-                  <p class="uk-text-bold">Committed to Forex Education</p>
+                <div class="ellipse">
+                <p>
+                  <br/>
+                  Up to $3 trillion in <br/>
+                  liquidity access.
+                  </p>
                 </div>
               </div>
             </div>
@@ -207,7 +245,7 @@
           </div>
           <div class="uk-width-5-6@m">
             <div class="uk-child-width-1-2@s uk-child-width-1-2@m uk-margin-medium-top" data-uk-grid>
-              <div>
+              <!-- <div>
                 <div class="in-pricing-1">
                   <div class="uk-card uk-card-default uk-box-shadow-medium">
                     <div class="uk-card-media-top">
@@ -217,7 +255,6 @@
                     <div class="uk-card-body">
                       <div class="in-heading-extra in-card-decor-1">
                         <h2 class="uk-margin-remove-bottom">Category 1</h2>
-                        <!-- <p class="uk-text-lead">Analysis</p> -->
                       </div>
                       <p class="uk-margin-small-top">
                         Minimum Requirement $250 <br>
@@ -230,15 +267,11 @@
                         Access to Monitor Room<br>
 
                       </p>
-                      <!-- <div class="uk-margin-medium-top">
-                                                <a class="uk-button uk-button-link uk-text-uppercase uk-text-small" href="#">Read analysis<i class="fas fa-caret-square-right uk-margin-small-left"></i></a>
-                                                <span class="uk-label uk-border-pill uk-align-right">Weekly Update</span>
-                                            </div> -->
                     </div>
                   </div>
                 </div>
-              </div>
-              <div>
+              </div> -->
+              <!-- <div>
                 <div class="in-pricing-1">
                   <div class="uk-card uk-card-default uk-box-shadow-medium">
                     <div class="uk-card-media-top">
@@ -248,7 +281,6 @@
                     <div class="uk-card-body">
                       <div class="in-heading-extra in-card-decor-2">
                         <h2 class="uk-margin-remove-bottom">Category 2</h2>
-                        <!-- <p class="uk-text-lead">Analysis</p> -->
                       </div>
                       <p class="uk-margin-small-top">
                         Minimum Requirement $5000 <br>
@@ -261,14 +293,11 @@
                         Access to Monitor Room<br>
 
                       </p>
-                      <!-- <div class="uk-margin-medium-top">
-                                                <a class="uk-button uk-button-link uk-text-uppercase uk-text-small" href="#">Read analysis<i class="fas fa-caret-square-right uk-margin-small-left"></i></a>
-                                                <span class="uk-label uk-border-pill uk-align-right">Daily Update</span>
-                                            </div> -->
+
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="uk-width-1-1">
                 <div class="uk-card uk-card-default uk-card-body in-profit-appcard">
                   <div class="uk-child-width-1-2@m" data-uk-grid>
@@ -294,7 +323,8 @@
               </div>
               <div class="uk-width-1-1">
                 <div class="uk-grid uk-grid-divider uk-grid-match in-profit-tradestatus" data-uk-grid>
-                  <div class="uk-width-1-1 uk-width-auto@m">
+                  <h1>$2,000,000+ Traded on Profit</h1>
+                  <!-- <div class="uk-width-1-1 uk-width-auto@m">
                     <div class="uk-flex uk-flex-left uk-flex-center@m">
                       <div class="uk-grid uk-grid-small uk-flex-middle">
                         <div class="uk-width-auto">
@@ -309,7 +339,7 @@
                   </div>
                   <div class="uk-width-1-1 uk-width-expand@m uk-flex-middle">
                     <p class="uk-text-lead">Trade & Invest in Stocks, Currencies, Indices, and Commodities (CFDs).</p>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -323,7 +353,7 @@
       <div class="uk-container uk-margin-small-bottom">
         <div class="uk-grid-large" data-uk-grid>
           <div class="uk-width-1-2@m">
-            <h2>We are committed to meeting your CFD and FX trading needs</h2>
+            <h2>We are committed to meeting your trading needs through innovative technology. </h2>
             <!-- <p class="uk-text-lead">Excepteur occaeca cupidata non proident fugiat nulla pariatur quasi architecto beatae, sunt in culpa quila officia deserunt mollit anim id est aute laborum.</p> -->
           </div>
         </div>
@@ -331,7 +361,7 @@
     </div>
     <!-- section content end -->
     <!-- section content begin -->
-    <div class="uk-section uk-padding-large in-padding-large-vertical@s in-profit-4">
+    <!-- <div class="uk-section uk-padding-large in-padding-large-vertical@s in-profit-4">
       <div class="uk-container uk-margin-small-top uk-margin-medium-bottom">
         <div class="uk-grid uk-flex uk-flex-center " data-uk-grid>
           <div class="uk-width-5-6@m">
@@ -344,7 +374,7 @@
               </div>
             </div>
           </div>
-          <!-- <div class="uk-width-1-1">
+          <div class="uk-width-1-1">
                         <div class="uk-child-width-1-2@s uk-child-width-1-5@m in-profit-stockprice" data-uk-grid>
                             <div>
                                 <div class="uk-card uk-card-body uk-card-small uk-card-default uk-border-pill">
@@ -397,7 +427,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
           <div class="uk-width-5-6@m">
             <div class="uk-grid-large uk-flex-middle" data-uk-grid>
               <div class="uk-width-auto@m">
@@ -421,7 +451,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </main>
 
