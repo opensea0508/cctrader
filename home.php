@@ -246,7 +246,7 @@
           <div class="uk-width-5-6@m">
             <div class="uk-child-width-1-2@s uk-child-width-1-2@m uk-margin-medium-top" data-uk-grid>
               <!-- <div>
-              <!-- <div>
+              <div>
                 <div class="in-pricing-1">
                   <div class="uk-card uk-card-default uk-box-shadow-medium">
                     <div class="uk-card-media-top">
@@ -271,8 +271,8 @@
                     </div>
                   </div>
                 </div>
-              </div> -->
-              <!-- <div>
+              </div>
+              <div>
                 <div class="in-pricing-1">
                   <div class="uk-card uk-card-default uk-box-shadow-medium">
                     <div class="uk-card-media-top">
@@ -298,7 +298,7 @@
                     </div>
                   </div>
                 </div>
-              </div> -->
+              </div>
               </div> -->
               <div class="uk-width-1-1">
                 <div class="uk-card uk-card-default uk-card-body in-profit-appcard">
