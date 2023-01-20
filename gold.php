@@ -23,7 +23,7 @@
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                width: 80%;
+                width: 60%;
                 border-radius: 8px;
             }
         </style>
