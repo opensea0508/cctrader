@@ -180,8 +180,6 @@
           <div class="uk-width-expand@m in-margin-top-20@s">
             <h2>Why CCI is a Trusted trading Firm</h2>
             <p>With our extensive knowledge of the worldwide market and other instruments like as oil and gas, commodities, precious metals, Algro commodities, CFDs, indices, and others, we provide prospective clients with a competitive advantage that they will not find elsewhere.</p>
-            <h2>Why CCI is a Trusted trading Firm</h2>
-            <p>With our extensive knowledge of the worldwide market and other instruments like as oil and gas, commodities, precious metals, Algro commodities, CFDs, indices, and others, we provide prospective clients with a competitive advantage that they will not find elsewhere.</p>
           </div>
           <div class="uk-width-2-3@m">
             <div class="uk-child-width-1-2@s uk-child-width-1-2@m" data-uk-grid>
