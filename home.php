@@ -75,7 +75,7 @@
                   </div>
                 </div>
                 <div class="uk-position-center">
-                  <img class="uk-animation-slide-top-small" src="img/in-lazy.svg" data-src="img/in-slideshow-image-3.png" alt="slideshow-image" width="862" height="540" data-uk-img>
+                  <img class="uk-animation-slide-top-small" src="img/in-lazy.svg" data-src="img/in-slideshow-image-1.png" alt="slideshow-image" width="862" height="540" data-uk-img>
                 </div>
               </div>
             </div>
@@ -122,7 +122,7 @@
                   </div>
                 </div>
                 <div class="uk-position-center">
-                  <img class="uk-animation-slide-top-small" src="img/in-lazy.svg" data-src="img/in-slideshow-image-4.png" alt="slideshow-image" width="862" height="540" data-uk-img>
+                  <img class="uk-animation-slide-top-small" src="img/in-lazy.svg" data-src="img/in-slideshow-image-2.png" alt="slideshow-image" width="862" height="540" data-uk-img>
                 </div>
               </div>
             </div>
@@ -191,42 +191,30 @@
                   <p class="uk-text-bold">Wide Range of Trading Instruments</p>
                 </div>
               </div>
-                <style>
-                .ellipse{
-                    background-color: #00BFFF;
-                    height: 150px;
-                    width: 250px;
-                    border-radius: 50%;
-                    text-align: center;
-                }
-                </style>
               <div class="uk-flex uk-flex-middle">
-                <div class="ellipse">
-                  <p>
-                  <br/>
-                    Over 500k <br/>
-                    Successful <br/>
-                    Executions.
-                  </p>
+                <div class="uk-margin-right">
+                  <img src="img/in-lazy.svg" data-src="img/in-profit-icon-2.svg" alt="profit-icon" width="72" height="72" data-uk-img>
+                </div>
+                <div>
+                  <p class="uk-text-bold">Over 500k Successful Executions</p>
                 </div>
               </div>
               <div class="uk-flex uk-flex-middle">
-                <div class="ellipse">
-                <p>
-                  Over $2,000,000 profit <br/>
-                  in 2022. <br/><br/>
-                    Successful <br/>
-                    Executions.
-                  </p>
+                <div class="uk-margin-right">
+                  <img src="img/in-lazy.svg" data-src="img/in-profit-icon-3.svg" alt="profit-icon" width="72" height="72" data-uk-img>
+                </div>
+                <div>
+                  <p class="uk-text-bold">Over $2,000,000 profit in 2022.
+
+$5,000,000 is planned for this year 2023.</p>
                 </div>
               </div>
               <div class="uk-flex uk-flex-middle">
-                <div class="ellipse">
-                <p>
-                  <br/>
-                  Up to $3 trillion in <br/>
-                  liquidity access.
-                  </p>
+                <div class="uk-margin-right">
+                  <img src="img/in-lazy.svg" data-src="img/in-profit-icon-4.svg" alt="profit-icon" width="72" height="72" data-uk-img>
+                </div>
+                <div>
+                  <p class="uk-text-bold">Up to $3 trillion in liquidity access.</p>
                 </div>
               </div>
             </div>
